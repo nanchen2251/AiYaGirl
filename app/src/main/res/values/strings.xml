@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">爱吖妹纸</string>
-    <string name="exit_toast">再按一次退出</string>
+    <string name="exit_toast">再按一次退出程序哦~</string>
     <string name="jump">跳过</string>
+    <string name="rv_with_footer_pull_load_more">上拉或点击加载更多</string>
+    <string name="rv_with_footer_loading">加载中…</string>
+    <string name="rv_with_footer_empty">没有数据啦</string>
+    <string name="home_search">搜索干货(日期数字有福利哦(｡◕∀◕｡))</string>
+    <string name="nanchen">nanchen</string>
 </resources>

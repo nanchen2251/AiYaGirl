@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="tab_text_size">14sp</dimen>
+    <dimen name="line_height">1px</dimen>
+</resources>

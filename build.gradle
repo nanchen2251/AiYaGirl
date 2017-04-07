@@ -15,6 +15,12 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
+        maven {
+            url "http://dl.bintray.com/glomadrian/maven"
+        }
     }
 }
 
@@ -25,7 +31,7 @@ task clean(type: Delete) {
 ext {
     compileSdkVersion = 25
     buildToolsVersion = '25.0.2'
-    minSdkVersion = 15
+    minSdkVersion = 16
     targetSdkVersion = compileSdkVersion
     supportLibVersion = '25.3.1'
     versionCode = 1

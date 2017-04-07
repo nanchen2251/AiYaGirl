@@ -15,9 +15,11 @@
         android:theme="@style/AppTheme">
 
         <!--闪屏页-->
-        <activity android:name="com.nanchen.aiyagirl.module.splash.SplashActivity"
-                  android:screenOrientation="portrait"
-                  android:launchMode="singleTop">
+        <activity
+            android:name="com.nanchen.aiyagirl.module.splash.SplashActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/ViewBigPicTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -27,9 +29,10 @@
 
 
         <!--主页面-->
-        <activity android:name="com.nanchen.aiyagirl.module.home.MainActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop">
+        <activity
+            android:name="com.nanchen.aiyagirl.module.home.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

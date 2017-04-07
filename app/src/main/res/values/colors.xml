@@ -4,4 +4,18 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorTheme">#ffce3d3a</color>
+    <color name="blue">#2F98E9</color>
+    <color name="white">#ffffffff</color>
+    <color name="main_white">#f2f4f5</color>
+    <color name="colorTabTextUnSelected">#D3D3D2</color>
+    <color name="colorTabTextSelected">#FDFDFD</color>
+    <color name="colorTabIndicator">#FDFDFD</color>
+    <!--页面背景的颜色-->
+    <color name="colorPageBg">#f2f4f5</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
+    <!--正文文字颜色-->
+    <color name="colorContent">#ff333333</color>
+    <!--侧边栏分割线-->
+    <color name="colorNavLine">#E0E0E0</color>
 </resources>

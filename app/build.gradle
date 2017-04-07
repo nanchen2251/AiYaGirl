@@ -41,4 +41,7 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.github.Andy671:Dachshund-Tab-Layout:v0.3.0'
+    compile 'com.github.glomadrian:grav:1@aar'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }
