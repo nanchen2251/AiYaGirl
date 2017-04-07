@@ -1,4 +1,4 @@
-# AiYaGril
+# AiYaGirl
 爱吖妹纸——Retrofit+Rx+MVP架构APP体验，福利多多，不容错过<br>
 
 
