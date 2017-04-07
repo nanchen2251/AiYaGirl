@@ -1,4 +1,4 @@
-package com.nanchen.aiyagril;
+package com.nanchen.aiyagirl;
 
 import org.junit.Test;
 

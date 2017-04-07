@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AiYaGril</string>
+    <string name="app_name">爱吖妹纸</string>
+    <string name="exit_toast">再按一次退出</string>
+    <string name="jump">跳过</string>
 </resources>
