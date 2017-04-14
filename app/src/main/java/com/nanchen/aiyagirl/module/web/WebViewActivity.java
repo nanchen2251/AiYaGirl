@@ -62,6 +62,12 @@ public class WebViewActivity extends BaseActivity implements IWebView{
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mWebPresenter.unSubscribe();
+    }
+
+    @Override
     public Activity getWebViewContext() {
         return this;
     }

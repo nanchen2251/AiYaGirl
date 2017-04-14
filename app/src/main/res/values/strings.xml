@@ -7,4 +7,6 @@
     <string name="rv_with_footer_empty">没有数据啦</string>
     <string name="home_search">搜索干货(日期数字有福利哦(｡◕∀◕｡))</string>
     <string name="nanchen">nanchen</string>
+    <string name="scale_up_show_behavior">com.nanchen.aiyagirl.widget.behavior.ScaleUpShowBehavior</string>
+
 </resources>

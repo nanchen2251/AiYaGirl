@@ -2,13 +2,14 @@ package com.nanchen.aiyagirl.module.category;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseFragment;
 import com.nanchen.aiyagirl.model.CategoryResult;
-import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryView;
 import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryPresenter;
+import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryView;
 import com.nanchen.aiyagirl.widget.RecyclerViewDivider;
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.OnLoadMoreListener;
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.RecyclerViewWithFooter;
@@ -24,7 +25,7 @@ import es.dmoral.toasty.Toasty;
  * Date: 2017-04-14  9:46
  */
 
-public class CategoryFragment extends BaseFragment implements ICategoryView, SwipeRefreshLayout.OnRefreshListener, OnLoadMoreListener {
+public class CategoryFragment extends BaseFragment implements ICategoryView, OnRefreshListener, OnLoadMoreListener {
 
     public static final String CATEGORY_NAME = "com.nanchen.aiyagirl.module.category.CategoryFragment.CATEGORY_NAME";
     @BindView(R.id.recyclerView)
@@ -61,7 +62,7 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, Swi
         mAdapter = new CategoryRecyclerAdapter(getActivity());
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.addItemDecoration(new RecyclerViewDivider(getActivity(),LinearLayoutManager.HORIZONTAL));
+        mRecyclerView.addItemDecoration(new RecyclerViewDivider(getActivity(), LinearLayoutManager.HORIZONTAL));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setOnLoadMoreListener(this);
         mRecyclerView.setEmpty();
@@ -73,7 +74,7 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, Swi
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mICategoryPresenter != null){
+        if (mICategoryPresenter != null) {
             mICategoryPresenter.unSubscribe();
         }
     }
@@ -125,4 +126,5 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, Swi
     public String getCategoryName() {
         return this.categoryName;
     }
+
 }

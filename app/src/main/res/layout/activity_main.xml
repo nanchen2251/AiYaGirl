@@ -69,6 +69,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_fab"
+            android:src="@mipmap/abc_ic_ab_back_top"
+            android:layout_margin="16dp"
+            android:layout_gravity="bottom|end"
+            app:layout_behavior="@string/scale_up_show_behavior"
+            app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+
         <!--<android.support.v4.widget.NestedScrollView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->

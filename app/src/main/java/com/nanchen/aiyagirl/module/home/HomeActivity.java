@@ -2,6 +2,7 @@ package com.nanchen.aiyagirl.module.home;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
@@ -57,9 +58,12 @@ public class HomeActivity extends BaseActivity implements IHomeView{
     DrawerLayout mDrawerLayout;
     @BindView(R.id.main_banner)
     Banner mBanner;
+    @BindView(R.id.main_fab)
+    FloatingActionButton mFab;
     // 保存用户按返回键的时间
     private long mExitTime = 0;
     private IHomePresenter mHomePresenter;
+
 
 
     @Override
@@ -71,6 +75,7 @@ public class HomeActivity extends BaseActivity implements IHomeView{
     @Override
     protected void initView(Bundle savedInstanceState) {
         mHomePresenter = new HomePresenter(this);
+
 
         initDrawerLayout();
 
@@ -110,8 +115,11 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         mViewPager.setCurrentItem(1);
         mViewPager.setOffscreenPageLimit(6);
 
+
         mHomePresenter.subscribe();
     }
+
+
 
     @Override
     protected void onDestroy() {
