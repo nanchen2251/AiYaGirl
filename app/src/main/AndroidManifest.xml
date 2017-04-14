@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.nanchen.aiyagirl">
 
-    <!--网络访问权限申明-->
+    <!-- 网络访问权限申明 -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
-        android:name="com.nanchen.aiyagirl.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,9 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--闪屏页-->
+        <!-- 闪屏页 -->
         <activity
-            android:name="com.nanchen.aiyagirl.module.splash.SplashActivity"
+            android:name=".module.splash.SplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/ViewBigPicTheme">
@@ -27,12 +30,13 @@
             </intent-filter>
         </activity>
 
-
-        <!--主页面-->
+        <!-- 主页面 -->
         <activity
-            android:name="com.nanchen.aiyagirl.module.home.MainActivity"
+            android:name=".module.home.HomeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".module.web.WebViewActivity">
         </activity>
     </application>
 

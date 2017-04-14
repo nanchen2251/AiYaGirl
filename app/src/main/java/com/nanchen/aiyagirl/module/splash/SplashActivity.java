@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseActivity;
 import com.nanchen.aiyagirl.config.ConstantsImageUrl;
-import com.nanchen.aiyagirl.module.home.MainActivity;
+import com.nanchen.aiyagirl.module.home.HomeActivity;
 
 import java.util.Random;
 
@@ -78,7 +78,7 @@ public class SplashActivity extends BaseActivity {
         if (isIn) {
             return;
         }
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
         finish();

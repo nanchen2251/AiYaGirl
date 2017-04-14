@@ -18,10 +18,20 @@ import java.util.List;
  */
 
 public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter {
-    private Context mContext;
-    private List<T> mData;
+    protected Context mContext;
+    protected List<T> mData;
     private int layoutId;
     private View mView;
+
+    public void addData(List<T> data){
+        mData.addAll(data);
+        notifyDataSetChanged();
+    }
+
+    public void setData(List<T> data){
+        mData.clear();
+        addData(data);
+    }
 
     public CommonRecyclerAdapter(Context context, List<T> data, int layoutId) {
         this.mContext = context;

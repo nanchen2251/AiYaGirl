@@ -415,7 +415,7 @@ public class StatusBarUtil {
      * 为头部是 ImageView 的界面设置状态栏全透明
      *
      * @param activity       需要设置的activity
-     * @param needOffsetView 需要向下偏移的 View
+     * @param needOffsetView 需要向下偏移的 ICategoryView
      */
     public static void setTransparentForImageView(Activity activity, View needOffsetView) {
         setTranslucentForImageView(activity, 0, needOffsetView);
@@ -425,7 +425,7 @@ public class StatusBarUtil {
      * 为头部是 ImageView 的界面设置状态栏透明(使用默认透明度)
      *
      * @param activity       需要设置的activity
-     * @param needOffsetView 需要向下偏移的 View
+     * @param needOffsetView 需要向下偏移的 ICategoryView
      */
     public static void setTranslucentForImageView(Activity activity, View needOffsetView) {
         setTranslucentForImageView(activity, DEFAULT_STATUS_BAR_ALPHA, needOffsetView);
@@ -436,7 +436,7 @@ public class StatusBarUtil {
      *
      * @param activity       需要设置的activity
      * @param statusBarAlpha 状态栏透明度
-     * @param needOffsetView 需要向下偏移的 View
+     * @param needOffsetView 需要向下偏移的 ICategoryView
      */
     public static void setTranslucentForImageView(Activity activity, int statusBarAlpha, View needOffsetView) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
@@ -460,7 +460,7 @@ public class StatusBarUtil {
      * 为 fragment 头部是 ImageView 的设置状态栏透明
      *
      * @param activity       fragment 对应的 activity
-     * @param needOffsetView 需要向下偏移的 View
+     * @param needOffsetView 需要向下偏移的 ICategoryView
      */
     public static void setTranslucentForImageViewInFragment(Activity activity, View needOffsetView) {
         setTranslucentForImageViewInFragment(activity, DEFAULT_STATUS_BAR_ALPHA, needOffsetView);
@@ -470,7 +470,7 @@ public class StatusBarUtil {
      * 为 fragment 头部是 ImageView 的设置状态栏透明
      *
      * @param activity       fragment 对应的 activity
-     * @param needOffsetView 需要向下偏移的 View
+     * @param needOffsetView 需要向下偏移的 ICategoryView
      */
     public static void setTransparentForImageViewInFragment(Activity activity, View needOffsetView) {
         setTranslucentForImageViewInFragment(activity, 0, needOffsetView);
@@ -481,7 +481,7 @@ public class StatusBarUtil {
      *
      * @param activity       fragment 对应的 activity
      * @param statusBarAlpha 状态栏透明度
-     * @param needOffsetView 需要向下偏移的 View
+     * @param needOffsetView 需要向下偏移的 ICategoryView
      */
     public static void setTranslucentForImageViewInFragment(Activity activity, int statusBarAlpha, View needOffsetView) {
         setTranslucentForImageView(activity, statusBarAlpha, needOffsetView);
@@ -491,7 +491,7 @@ public class StatusBarUtil {
     }
 
     /**
-     * 隐藏伪状态栏 View
+     * 隐藏伪状态栏 ICategoryView
      *
      * @param activity 调用的 Activity
      */
@@ -614,10 +614,10 @@ public class StatusBarUtil {
     }
 
     /**
-     * 创建半透明矩形 View
+     * 创建半透明矩形 ICategoryView
      *
      * @param alpha 透明值
-     * @return 半透明 View
+     * @return 半透明 ICategoryView
      */
     private static View createTranslucentStatusBarView(Activity activity, int alpha) {
         // 绘制一个和状态栏一样高的矩形
