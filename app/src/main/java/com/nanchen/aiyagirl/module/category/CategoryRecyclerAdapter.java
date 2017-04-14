@@ -1,9 +1,9 @@
 package com.nanchen.aiyagirl.module.category;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.nanchen.aiyagirl.ConfigManage;
@@ -13,9 +13,8 @@ import com.nanchen.aiyagirl.base.adapter.CommonRecyclerHolder;
 import com.nanchen.aiyagirl.base.adapter.ListenerWithPosition;
 import com.nanchen.aiyagirl.model.CategoryResult;
 import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
+import com.nanchen.aiyagirl.module.web.WebViewActivity;
 import com.nanchen.aiyagirl.utils.TimeUtil;
-
-import es.dmoral.toasty.Toasty;
 
 /**
  * Author: nanchen
@@ -68,10 +67,10 @@ class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.Resul
 
     @Override
     public void onClick(View v, int position, CommonRecyclerHolder holder) {
-        Toasty.info(mContext,"跳转到相应网页！", Toast.LENGTH_SHORT,true).show();
-//        Intent intent = new Intent(mContext, WebViewActivity.class);
-//        intent.putExtra(WebViewActivity.GANK_TITLE, mData.get(position).desc);
-//        intent.putExtra(WebViewActivity.GANK_URL, mData.get(position).url);
-//        mContext.startActivity(intent);
+//        Toasty.info(mContext,"跳转到相应网页！", Toast.LENGTH_SHORT,true).show();
+        Intent intent = new Intent(mContext, WebViewActivity.class);
+        intent.putExtra(WebViewActivity.GANK_TITLE, mData.get(position).desc);
+        intent.putExtra(WebViewActivity.GANK_URL, mData.get(position).url);
+        mContext.startActivity(intent);
     }
 }

@@ -36,7 +36,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".module.web.WebViewActivity">
+
+        <!--Web页-->
+        <activity android:name=".module.web.WebViewActivity"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
         </activity>
     </application>
 
