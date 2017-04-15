@@ -27,6 +27,8 @@ public interface CategoryContract {
         void setLoading();
 
         String getCategoryName();
+
+        void noMore();
     }
     
     interface ICategoryPresenter extends BasePresenter{

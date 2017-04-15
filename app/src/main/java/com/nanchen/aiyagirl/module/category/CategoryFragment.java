@@ -127,4 +127,9 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, OnR
         return this.categoryName;
     }
 
+    @Override
+    public void noMore() {
+        mRecyclerView.setEnd("没有更多数据");
+    }
+
 }

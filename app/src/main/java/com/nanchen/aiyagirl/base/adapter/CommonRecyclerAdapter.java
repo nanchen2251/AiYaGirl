@@ -24,7 +24,9 @@ public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter {
     private View mView;
 
     public void addData(List<T> data){
-        mData.addAll(data);
+        if (data != null){
+            mData.addAll(data);
+        }
         notifyDataSetChanged();
     }
 
