@@ -2,6 +2,8 @@
 爱吖妹纸——Retrofit+Rx+MVP架构APP体验，福利多多，不容错过<br>
 
 
+## 本App从零搭建，你可以关注看到笔者的思路，强烈推荐。
+
 爱吖妹纸数据来源于代码家的[干货集中营](http://gank.io/),那么多完整的App,你选择了我，这是我的幸运。<br>
 
 
@@ -20,6 +22,9 @@
 #### * 开发交流QQ群：（118116509）
 #### * 拥抱开源：https://github.com/nanchen2251
 #### * 有问题请联系邮箱：（liushilin520@foxmail.com）
+
+## 效果演示
+![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF.gif)
    
 ## 关于作者
     南尘<br>
