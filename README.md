@@ -24,14 +24,16 @@
 #### * 有问题请联系邮箱：（liushilin520@foxmail.com）
 
 ## 效果演示
-![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF.gif)
+![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF1.gif)
 
 ## 屏幕截图
 
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/1.jpg) 
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
-
+## 特别鸣谢
+[代码家](https://github.com/daimajia) <br>
+[干货集中营](http://gank.io/) 
 
 ## 关于作者
     南尘<br>
