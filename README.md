@@ -24,7 +24,7 @@
 #### * 有问题请联系邮箱：（liushilin520@foxmail.com）
 
 ## 效果演示
-![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF.gif)
+![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF1.gif)
 
 ## 屏幕截图
 
