@@ -28,6 +28,7 @@ import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
 import com.nanchen.aiyagirl.module.navdeedback.NavDeedBackActivity;
 import com.nanchen.aiyagirl.module.navhome.NavHomeActivity;
 import com.nanchen.aiyagirl.module.web.WebViewActivity;
+import com.nanchen.aiyagirl.utils.AlipayZeroSdk;
 import com.nanchen.aiyagirl.utils.PerfectClickListener;
 import com.nanchen.aiyagirl.utils.ScreenUtil;
 import com.nanchen.aiyagirl.utils.StatusBarUtil;
@@ -171,6 +172,7 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         headerView.findViewById(R.id.ll_nav_deedback).setOnClickListener(mListener);
         headerView.findViewById(R.id.ll_nav_login).setOnClickListener(mListener);
         headerView.findViewById(R.id.ll_nav_exit).setOnClickListener(mListener);
+        headerView.findViewById(R.id.ll_nav_donation).setOnClickListener(mListener);
 
     }
 
@@ -194,7 +196,17 @@ public class HomeActivity extends BaseActivity implements IHomeView{
                        case R.id.ll_nav_deedback: // 问题反馈
                            startActivity(new Intent(HomeActivity.this, NavDeedBackActivity.class));
                            break;
-                       case R.id.ll_nav_login:
+                       case R.id.ll_nav_donation: // 捐赠开发者
+                           // https://fama.alipay.com/qrcode/qrcodelist.htm?qrCodeType=P  二维码地址
+                           // http://cli.im/deqr/ 解析二维码
+                           // aex01018hzmxqeqmcaffh96
+                           if (AlipayZeroSdk.hasInstalledAlipayClient(HomeActivity.this)) {
+                               AlipayZeroSdk.startAlipayClient(HomeActivity.this, "aex01018hzmxqeqmcaffh96");
+                           } else {
+                               Snackbar.make(mToolbar, "谢谢，您没有安装支付宝客户端", Snackbar.LENGTH_LONG).show();
+                           }
+                           break;
+                       case R.id.ll_nav_login: // 登录github账号
                            Intent intent_login = new Intent(HomeActivity.this, WebViewActivity.class);
                            intent_login.putExtra(WebViewActivity.GANK_TITLE, "登录github");
                            intent_login.putExtra(WebViewActivity.GANK_URL, "https://github.com/login");

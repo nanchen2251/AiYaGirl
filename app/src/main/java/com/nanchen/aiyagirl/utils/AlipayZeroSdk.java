@@ -13,6 +13,8 @@ import android.service.quicksettings.TileService;
 import java.net.URISyntaxException;
 
 /**
+ * 一个轻量的支付宝转账工具类
+ *
  * Author: nanchen
  * Email: liushilin520@foxmail.com
  * Date: 2017-04-20  15:54
