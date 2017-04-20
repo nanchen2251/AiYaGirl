@@ -2,6 +2,7 @@ package com.nanchen.aiyagirl;
 
 import android.app.Application;
 
+import com.nanchen.aiyagirl.utils.Utils;
 import com.squareup.leakcanary.LeakCanary;
 
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackManager;
@@ -36,5 +37,6 @@ public class App extends Application {
         BGASwipeBackManager.getInstance().init(this);
         ConfigManage.INSTANCE.initConfig(this);
         INSTANCE = this;
+        Utils.init(this);
     }
 }

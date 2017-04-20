@@ -49,6 +49,9 @@ public class WebViewActivity extends BaseActivity implements IWebView{
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+
+
+
         mWebPresenter = new WebPresenter(this);
 
         mWebToolbar.setNavigationOnClickListener(new OnClickListener() {

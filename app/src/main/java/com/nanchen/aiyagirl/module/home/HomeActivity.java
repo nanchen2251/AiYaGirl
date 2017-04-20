@@ -1,5 +1,6 @@
 package com.nanchen.aiyagirl.module.home;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -21,6 +23,8 @@ import com.nanchen.aiyagirl.config.GlobalConfig;
 import com.nanchen.aiyagirl.module.category.CategoryFragment;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
+import com.nanchen.aiyagirl.utils.ScreenUtil;
+import com.nanchen.aiyagirl.utils.StatusBarUtil;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
@@ -71,10 +75,28 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         return R.layout.activity_main;
     }
 
+    @Override
+    protected void beforeInit() {
+        super.beforeInit();
+        StatusBarUtil.setTranslucent(this);
+    }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         mHomePresenter = new HomePresenter(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 4.4 以上版本
+            // 设置 Toolbar 高度为 80dp，适配状态栏
+            ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
+            layoutParams.height = ScreenUtil.dip2px(this,80);
+            mToolbar.setLayoutParams(layoutParams);
+        }
+
+//        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+//        params.setMargins(0,ScreenUtil.getStatusBarHeight(this),0,0);
+//        params.gravity = Gravity.CENTER_HORIZONTAL;
+//        mTabLayout.setLayoutParams(params);
+
 
 
         initDrawerLayout();
