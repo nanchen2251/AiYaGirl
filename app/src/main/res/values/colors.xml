@@ -23,4 +23,9 @@
     <color name="colorActivityBackground" >#FAFAFA</color>
     <color name="colorWhite">#ffffffff</color>
     <color name="colorTitle">#666</color>
+    <color name="colorTabText">#585858</color>
+    <!--暂时用于反馈文字-->
+    <color name="text_common">#191919</color>
+    <!--item的分割线-->
+    <color name="colorLineItem">#FFDDDDDD</color>
 </resources>

@@ -3,6 +3,8 @@ package com.nanchen.aiyagirl.module.navhome;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseActivity;
@@ -33,13 +35,14 @@ public class NavHomeActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     protected void initView(Bundle savedInstanceState) {
         StatusBarUtil.setTranslucentForImageView(this, 0, mToolbar);
+        mToolbar.setNavigationOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @OnClick(R.id.nav_home_fab)

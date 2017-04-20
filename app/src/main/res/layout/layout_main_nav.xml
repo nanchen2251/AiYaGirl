@@ -67,7 +67,7 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_nav_scan_download"
+        android:id="@+id/ll_nav_scan_address"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/ripple_one_item_bg"
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="扫码下载"
+            android:text="项目地址"
             android:textColor="@color/colorContent"
             android:textSize="15sp"/>
 

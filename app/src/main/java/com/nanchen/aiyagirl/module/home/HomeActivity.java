@@ -25,7 +25,9 @@ import com.nanchen.aiyagirl.config.GlobalConfig;
 import com.nanchen.aiyagirl.module.category.CategoryFragment;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
+import com.nanchen.aiyagirl.module.navdeedback.NavDeedBackActivity;
 import com.nanchen.aiyagirl.module.navhome.NavHomeActivity;
+import com.nanchen.aiyagirl.module.web.WebViewActivity;
 import com.nanchen.aiyagirl.utils.PerfectClickListener;
 import com.nanchen.aiyagirl.utils.ScreenUtil;
 import com.nanchen.aiyagirl.utils.StatusBarUtil;
@@ -35,7 +37,6 @@ import com.youth.banner.BannerConfig;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 
 
@@ -166,6 +167,10 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         mNavView.inflateHeaderView(R.layout.layout_main_nav);
         View headerView = mNavView.getHeaderView(0);
         headerView.findViewById(R.id.ll_nav_homepage).setOnClickListener(mListener);
+        headerView.findViewById(R.id.ll_nav_scan_address).setOnClickListener(mListener);
+        headerView.findViewById(R.id.ll_nav_deedback).setOnClickListener(mListener);
+        headerView.findViewById(R.id.ll_nav_login).setOnClickListener(mListener);
+        headerView.findViewById(R.id.ll_nav_exit).setOnClickListener(mListener);
 
     }
 
@@ -177,8 +182,28 @@ public class HomeActivity extends BaseActivity implements IHomeView{
                 @Override
                 public void run() {
                    switch (v.getId()){
-                       case R.id.ll_nav_homepage:
+                       case R.id.ll_nav_homepage: // 项目主页
                            startActivity(new Intent(HomeActivity.this, NavHomeActivity.class));
+                           break;
+                       case R.id.ll_nav_scan_address: // 项目地址
+                           Intent intent = new Intent(HomeActivity.this, WebViewActivity.class);
+                           intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
+                           intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
+                           startActivity(intent);
+                           break;
+                       case R.id.ll_nav_deedback: // 问题反馈
+                           startActivity(new Intent(HomeActivity.this, NavDeedBackActivity.class));
+                           break;
+                       case R.id.ll_nav_login:
+                           Intent intent_login = new Intent(HomeActivity.this, WebViewActivity.class);
+                           intent_login.putExtra(WebViewActivity.GANK_TITLE, "登录github");
+                           intent_login.putExtra(WebViewActivity.GANK_URL, "https://github.com/login");
+                           startActivity(intent_login);
+                           break;
+                       case R.id.ll_nav_exit:
+                           finish();
+                           break;
+                       default:
                            break;
                    }
                 }
@@ -195,13 +220,6 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         } else {
             finish();
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 
     @Override

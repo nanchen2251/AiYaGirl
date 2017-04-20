@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".module.navhome.NavHomeActivity">
         </activity>
+        <activity android:name=".module.navdeedback.NavDeedBackActivity">
+        </activity>
     </application>
 
 </manifest>
