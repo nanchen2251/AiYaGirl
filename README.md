@@ -27,8 +27,11 @@
 ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF.gif)
 
 ## 屏幕截图
-![]（https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/1.jpg）
-![]（https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg）
+
+    ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/1.jpg) 
+    ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
+
+
 
 ## 关于作者
     南尘<br>
