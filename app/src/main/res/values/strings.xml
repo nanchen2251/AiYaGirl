@@ -42,4 +42,15 @@
     <string name="string_share_text">发现了一个Retrofit+RxJava+Mvp架构的App，里面有大量IT干货，每天提供安卓，IOS等最新资讯，大力推荐哦~：https://github.com/nanchen2251/AiYaGirl[分享自爱吖妹纸]</string>
     <string name="github_issues">您好，很希望得到您的意见，由于没有线上反馈系统，您可以在GitHub的Issues处说明问题原因，也可以通过以下方式联系我，我将根据情况尽量处理哦 ~</string>
 
+
+    <!--url-->
+    <string name="string_url_AiYaGirl">https://github.com/nanchen2251/AiYaGirl</string>
+    <string name="string_url_other">https://github.com/nanchen2251</string>
+    <!--fir.im-->
+    <string name="string_url_new_version">https://fir.im/AiYaGirl</string>
+    <!--issues-->
+    <string name="string_url_issues">https://github.com/nanchen2251/AiYaGirl/issues</string>
+    <!--blog-->
+    <string name="string_url_blog">http://www.cnblogs.com/liushilin/</string>
+    <string name="string_url_gankio">http://gank.io/api</string>
 </resources>

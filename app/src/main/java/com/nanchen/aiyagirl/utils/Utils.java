@@ -1,6 +1,8 @@
 package com.nanchen.aiyagirl.utils;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 
 /**
  * Author: nanchen
@@ -32,5 +34,14 @@ public class Utils {
     public static Context getContext() {
         if (context != null) return context;
         throw new NullPointerException("u should init first");
+    }
+
+    /**
+     * 使用浏览器打开链接
+     */
+    public static void openLink(Context context, String content) {
+        Uri issuesUrl = Uri.parse(content);
+        Intent intent = new Intent(Intent.ACTION_VIEW, issuesUrl);
+        context.startActivity(intent);
     }
 }

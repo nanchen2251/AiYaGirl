@@ -25,6 +25,7 @@ import com.nanchen.aiyagirl.config.GlobalConfig;
 import com.nanchen.aiyagirl.module.category.CategoryFragment;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
+import com.nanchen.aiyagirl.module.navabout.NavAboutActivity;
 import com.nanchen.aiyagirl.module.navdeedback.NavDeedBackActivity;
 import com.nanchen.aiyagirl.module.navhome.NavHomeActivity;
 import com.nanchen.aiyagirl.module.web.WebViewActivity;
@@ -187,11 +188,13 @@ public class HomeActivity extends BaseActivity implements IHomeView{
                        case R.id.ll_nav_homepage: // 项目主页
                            startActivity(new Intent(HomeActivity.this, NavHomeActivity.class));
                            break;
-                       case R.id.ll_nav_scan_address: // 项目地址
-                           Intent intent = new Intent(HomeActivity.this, WebViewActivity.class);
-                           intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
-                           intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
-                           startActivity(intent);
+                       case R.id.ll_nav_scan_address: // 关于我们
+//                           Intent intent = new Intent(HomeActivity.this, WebViewActivity.class);
+//                           intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
+//                           intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
+//                           startActivity(intent);
+
+                           startActivity(new Intent(HomeActivity.this, NavAboutActivity.class));
                            break;
                        case R.id.ll_nav_deedback: // 问题反馈
                            startActivity(new Intent(HomeActivity.this, NavDeedBackActivity.class));

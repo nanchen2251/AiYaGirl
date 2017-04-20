@@ -42,10 +42,6 @@ public class WebViewActivity extends BaseActivity implements IWebView{
         return R.layout.activity_web_view;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     protected void initView(Bundle savedInstanceState) {

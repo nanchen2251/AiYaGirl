@@ -34,7 +34,6 @@ public class ShareUtil {
         intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.action_share));
         intent.putExtra(Intent.EXTRA_TEXT, extraText);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(
-                Intent.createChooser(intent, context.getString(R.string.action_share)));
+        context.startActivity(Intent.createChooser(intent, context.getString(R.string.action_share)));
     }
 }

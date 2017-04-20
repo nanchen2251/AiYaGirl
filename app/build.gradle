@@ -21,8 +21,8 @@ android {
             variant.outputs.each { output ->
                 def outputFile = output.outputFile
                 if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                    // 输出apk名称为AiYaGirl_release_1.0.1.apk
-                    def fileName = "AiYaGirl_release_${defaultConfig.versionName}.apk"
+                    // 输出apk名称为AiYaGirl_1.0.1.apk
+                    def fileName = "AiYaGirl_${defaultConfig.versionName}.apk"
                     output.outputFile = new File(outputFile.parent, fileName)
                 }
             }

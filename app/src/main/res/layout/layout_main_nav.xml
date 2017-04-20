@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="项目地址"
+            android:text="关于我们"
             android:textColor="@color/colorContent"
             android:textSize="15sp"/>
 

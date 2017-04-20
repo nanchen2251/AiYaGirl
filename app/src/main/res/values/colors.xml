@@ -28,4 +28,6 @@
     <color name="text_common">#191919</color>
     <!--item的分割线-->
     <color name="colorLineItem">#FFDDDDDD</color>
+    <!--首页item文字颜色-->
+    <color name="colorSubtitle">#999</color>
 </resources>
