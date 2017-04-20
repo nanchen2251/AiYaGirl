@@ -32,8 +32,8 @@
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
 ## 特别鸣谢
-[代码家]（https://github.com/daimajia）
-[干货集中营]（http://gank.io/）
+[代码家](https://github.com/daimajia) <br>
+[干货集中营](http://gank.io/) 
 
 ## 关于作者
     南尘<br>
