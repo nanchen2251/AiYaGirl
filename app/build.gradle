@@ -28,6 +28,7 @@ dependencies {
     compile "com.android.support:cardview-v7:$supportLibVersion"
     // 仿iOS侧滑返回 https://github.com/bingoogolapple/BGASwipeBackLayout-Android
     // leakCanary 内存泄漏检测 https://github.com/square/leakcanary
+    //最新版本
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
@@ -40,10 +41,10 @@ dependencies {
     compile 'com.github.Andy671:Dachshund-Tab-Layout:v0.3.0'
     compile 'com.github.glomadrian:grav:1@aar'
     compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.GrenderG:Toasty:1.1.3'
+    compile 'com.youth.banner:banner:1.4.9'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-    compile 'com.github.GrenderG:Toasty:1.1.3'
-    compile 'com.youth.banner:banner:1.4.9'  //最新版本
 }

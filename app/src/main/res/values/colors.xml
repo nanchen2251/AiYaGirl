@@ -21,4 +21,6 @@
     <color name="category_text">#323232</color>
     <color name="category_text2">#b6b4b4</color>
     <color name="colorActivityBackground" >#FAFAFA</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorTitle">#666</color>
 </resources>

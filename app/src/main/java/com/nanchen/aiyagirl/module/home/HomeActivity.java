@@ -1,11 +1,13 @@
 package com.nanchen.aiyagirl.module.home;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
@@ -23,6 +25,8 @@ import com.nanchen.aiyagirl.config.GlobalConfig;
 import com.nanchen.aiyagirl.module.category.CategoryFragment;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
+import com.nanchen.aiyagirl.module.navhome.NavHomeActivity;
+import com.nanchen.aiyagirl.utils.PerfectClickListener;
 import com.nanchen.aiyagirl.utils.ScreenUtil;
 import com.nanchen.aiyagirl.utils.StatusBarUtil;
 import com.youth.banner.Banner;
@@ -44,7 +48,6 @@ import es.dmoral.toasty.Toasty;
  */
 
 public class HomeActivity extends BaseActivity implements IHomeView{
-
 
     @BindView(R.id.main_head_img)
     ImageView mHeadImg;
@@ -162,8 +165,27 @@ public class HomeActivity extends BaseActivity implements IHomeView{
     private void initDrawerLayout() {
         mNavView.inflateHeaderView(R.layout.layout_main_nav);
         View headerView = mNavView.getHeaderView(0);
+        headerView.findViewById(R.id.ll_nav_homepage).setOnClickListener(mListener);
 
     }
+
+    private PerfectClickListener mListener = new PerfectClickListener() {
+        @Override
+        protected void onNoDoubleClick(final View v) {
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            mDrawerLayout.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                   switch (v.getId()){
+                       case R.id.ll_nav_homepage:
+                           startActivity(new Intent(HomeActivity.this, NavHomeActivity.class));
+                           break;
+                   }
+                }
+            },260);
+        }
+    };
+
 
     @Override
     public void onBackPressed() {

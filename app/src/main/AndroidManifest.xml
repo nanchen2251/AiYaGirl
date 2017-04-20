@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <!-- if you want to load images from a file OR from the internet -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".App"
@@ -37,10 +37,13 @@
             android:screenOrientation="portrait">
         </activity>
 
-        <!--Web页-->
-        <activity android:name=".module.web.WebViewActivity"
-                  android:launchMode="singleTop"
-                  android:screenOrientation="portrait">
+        <!-- Web页 -->
+        <activity
+            android:name=".module.web.WebViewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".module.navhome.NavHomeActivity">
         </activity>
     </application>
 
