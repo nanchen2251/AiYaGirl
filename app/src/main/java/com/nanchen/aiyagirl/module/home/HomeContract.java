@@ -18,6 +18,7 @@ public interface HomeContract {
         void showBannerFail(String failMessage);
 
         void setBanner(List<String> imgUrls);
+
     }
 
     interface IHomePresenter extends BasePresenter{

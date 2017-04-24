@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.nanchen.aiyagirl.module.picture.PictureActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/picture_app_bar">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/picture_toolbar"
+            android:background="@color/blue"
+            app:navigationIcon="@mipmap/icon_back"
+            app:title="关于爱吖妹纸"/>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/picture_img"
+        android:contentDescription="@null"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_image_save"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/picture_btn_save"
+        android:contentDescription="@null"
+        android:layout_gravity="bottom|center_horizontal"/>
+
+
+</FrameLayout>

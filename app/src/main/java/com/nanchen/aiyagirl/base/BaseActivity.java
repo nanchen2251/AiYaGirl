@@ -13,6 +13,8 @@ import com.nanchen.aiyagirl.utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
 
 /**
  * Activity基类，所有Activity应该继承此类
@@ -23,6 +25,9 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
  */
 
 public abstract class BaseActivity extends AppCompatActivity implements BGASwipeBackHelper.Delegate{
+
+    private CompositeSubscription mCompositeSubscription;
+
     protected BGASwipeBackHelper mSwipeBackHelper;
 
     /**
@@ -41,11 +46,37 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
 
     }
 
+    /**
+     * 初始化布局以及View控件
+     */
+    protected abstract void initView(Bundle savedInstanceState);
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
         ButterKnife.bind(this);
+    }
+
+    public CompositeSubscription getCompositeSubscription(){
+        checkSubscription();
+        return this.mCompositeSubscription;
+    }
+
+    /**
+     * 检查是否为空，以免导致空指针
+     */
+    private void checkSubscription(){
+        if (this.mCompositeSubscription == null){
+            this.mCompositeSubscription = new CompositeSubscription();
+        }
+    }
+
+    /**
+     * 增加一个调度器
+     */
+    protected void addSubscription(Subscription s){
+        checkSubscription();
+        this.mCompositeSubscription.add(s);
     }
 
     @Override
@@ -59,6 +90,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
         if (getContentViewLayoutID() != 0) {
             setContentView(getContentViewLayoutID());
             initView(savedInstanceState);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (this.mCompositeSubscription != null && !this.mCompositeSubscription.isUnsubscribed()){
+            this.mCompositeSubscription.unsubscribe();
         }
     }
 
@@ -163,8 +202,5 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * 初始化布局以及View控件
-     */
-    protected abstract void initView(Bundle savedInstanceState);
+
 }

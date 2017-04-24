@@ -7,6 +7,8 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -22,12 +24,13 @@ import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseActivity;
 import com.nanchen.aiyagirl.base.adapter.CommonViewPagerAdapter;
 import com.nanchen.aiyagirl.config.GlobalConfig;
+import com.nanchen.aiyagirl.model.PictureModel;
 import com.nanchen.aiyagirl.module.category.CategoryFragment;
-import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
 import com.nanchen.aiyagirl.module.navabout.NavAboutActivity;
 import com.nanchen.aiyagirl.module.navdeedback.NavDeedBackActivity;
 import com.nanchen.aiyagirl.module.navhome.NavHomeActivity;
+import com.nanchen.aiyagirl.module.picture.PictureActivity;
 import com.nanchen.aiyagirl.module.web.WebViewActivity;
 import com.nanchen.aiyagirl.utils.AlipayZeroSdk;
 import com.nanchen.aiyagirl.utils.PerfectClickListener;
@@ -35,6 +38,7 @@ import com.nanchen.aiyagirl.utils.ScreenUtil;
 import com.nanchen.aiyagirl.utils.StatusBarUtil;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.List;
 
@@ -50,7 +54,7 @@ import es.dmoral.toasty.Toasty;
  * Date: 2017-04-07  15:31
  */
 
-public class HomeActivity extends BaseActivity implements IHomeView{
+public class HomeActivity extends BaseActivity implements IHomeView,OnBannerListener{
 
     @BindView(R.id.main_head_img)
     ImageView mHeadImg;
@@ -72,7 +76,7 @@ public class HomeActivity extends BaseActivity implements IHomeView{
     FloatingActionButton mFab;
     // 保存用户按返回键的时间
     private long mExitTime = 0;
-    private IHomePresenter mHomePresenter;
+    private HomePresenter mHomePresenter;
 
 
 
@@ -108,6 +112,7 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         initDrawerLayout();
 
         mBanner.setIndicatorGravity(BannerConfig.RIGHT);
+        mBanner.setOnBannerListener(this);
 
         String[] titles = {
                 GlobalConfig.CATEGORY_NAME_APP,
@@ -189,11 +194,6 @@ public class HomeActivity extends BaseActivity implements IHomeView{
                            startActivity(new Intent(HomeActivity.this, NavHomeActivity.class));
                            break;
                        case R.id.ll_nav_scan_address: // 关于我们
-//                           Intent intent = new Intent(HomeActivity.this, WebViewActivity.class);
-//                           intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
-//                           intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
-//                           startActivity(intent);
-
                            startActivity(new Intent(HomeActivity.this, NavAboutActivity.class));
                            break;
                        case R.id.ll_nav_deedback: // 问题反馈
@@ -247,4 +247,13 @@ public class HomeActivity extends BaseActivity implements IHomeView{
         mBanner.setImages(imgUrls).setImageLoader(new GlideImageLoader()).start();
     }
 
+
+    @Override
+    public void OnBannerClick(int position) {
+        PictureModel model = mHomePresenter.getBannerModel().get(position);
+        Intent intent = PictureActivity.newIntent(this,model.url,model.desc);
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this,mBanner,PictureActivity.TRANSIT_PIC);
+        ActivityCompat.startActivity(this,intent,optionsCompat.toBundle());
+    }
 }

@@ -2,6 +2,7 @@ package com.nanchen.aiyagirl.module.home;
 
 import com.nanchen.aiyagirl.model.CategoryResult;
 import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
+import com.nanchen.aiyagirl.model.PictureModel;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
 import com.nanchen.aiyagirl.net.NetWork;
@@ -20,19 +21,26 @@ import rx.schedulers.Schedulers;
  * Date: 2017-04-14  12:31
  */
 
-public class HomePresenter implements IHomePresenter {
+public class HomePresenter implements IHomePresenter{
 
     private Subscription mSubscription;
 
     private IHomeView mHomeView;
 
+    private List<PictureModel> mModels;
+
     HomePresenter(IHomeView homeView){
         this.mHomeView = homeView;
+        mModels = new ArrayList<>();
     }
 
     @Override
     public void subscribe() {
         getBannerData();
+    }
+
+    public List<PictureModel> getBannerModel(){
+        return this.mModels;
     }
 
     @Override
@@ -68,12 +76,18 @@ public class HomePresenter implements IHomePresenter {
                                 if (!result.url.isEmpty()){
                                     imgUrls.add(result.url);
                                 }
+                                PictureModel model = new PictureModel();
+                                model.desc = result.desc;
+                                model.url = result.url;
+                                mModels.add(model);
                             }
                             mHomeView.setBanner(imgUrls);
+
                         }else{
                             mHomeView.showBannerFail("Banner 图加载失败");
                         }
                     }
                 });
     }
+
 }

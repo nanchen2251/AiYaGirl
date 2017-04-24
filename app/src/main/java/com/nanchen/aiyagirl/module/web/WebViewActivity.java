@@ -1,6 +1,8 @@
 package com.nanchen.aiyagirl.module.web;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
@@ -37,10 +39,18 @@ public class WebViewActivity extends BaseActivity implements IWebView{
 
     private IWebPresenter mWebPresenter;
 
+    public static void start(Context context,String url,String title){
+        Intent intent = new Intent(context, WebViewActivity.class);
+        intent.putExtra(WebViewActivity.GANK_TITLE,title);
+        intent.putExtra(WebViewActivity.GANK_URL,url);
+        context.startActivity(intent);
+    }
+
     @Override
     protected int getContentViewLayoutID() {
         return R.layout.activity_web_view;
     }
+
 
 
     @Override
