@@ -58,9 +58,11 @@ class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.Resul
             } else {
                 imageView.setVisibility(View.GONE);
             }
+
             holder.setTextViewText(R.id.category_item_desc, resultsBean.desc == null ? "unknown" : resultsBean.desc);
             holder.setTextViewText(R.id.category_item_author, resultsBean.who == null ? "unknown" : resultsBean.who);
             holder.setTextViewText(R.id.category_item_time, TimeUtil.dateFormat(resultsBean.publishedAt));
+            holder.setTextViewText(R.id.category_item_src, resultsBean.source == null ? "unknown" : resultsBean.source);
             holder.setOnClickListener(this, R.id.category_item_layout);
         }
     }

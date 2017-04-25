@@ -1,9 +1,12 @@
 package com.nanchen.aiyagirl.module.picture;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -21,6 +24,7 @@ import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseActivity;
 import com.nanchen.aiyagirl.module.picture.PictureContract.Presenter;
 import com.nanchen.aiyagirl.utils.Utils;
+import com.youth.banner.Banner;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -56,6 +60,15 @@ public class PictureActivity extends BaseActivity {
         intent.putExtra(EXTRA_IMAGE_URL, url);
         intent.putExtra(EXTRA_IMAGE_TITLE, desc);
         return intent;
+    }
+
+    public static void start(Activity context, String url, String desc, Banner banner){
+        Intent intent = new Intent(context,PictureActivity.class);
+        intent.putExtra(EXTRA_IMAGE_URL, url);
+        intent.putExtra(EXTRA_IMAGE_TITLE, desc);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                context, banner, TRANSIT_PIC);//与xml文件对应
+        ActivityCompat.startActivity(context, intent, options.toBundle());
     }
 
     private void parseIntent() {

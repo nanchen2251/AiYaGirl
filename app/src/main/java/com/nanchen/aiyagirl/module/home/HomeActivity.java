@@ -7,8 +7,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -251,9 +249,10 @@ public class HomeActivity extends BaseActivity implements IHomeView,OnBannerList
     @Override
     public void OnBannerClick(int position) {
         PictureModel model = mHomePresenter.getBannerModel().get(position);
-        Intent intent = PictureActivity.newIntent(this,model.url,model.desc);
-        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                this,mBanner,PictureActivity.TRANSIT_PIC);
-        ActivityCompat.startActivity(this,intent,optionsCompat.toBundle());
+//        Intent intent = PictureActivity.newIntent(this,model.url,model.desc);
+//        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                this,mBanner,PictureActivity.TRANSIT_PIC);
+//        ActivityCompat.startActivity(this,intent,optionsCompat.toBundle());
+        PictureActivity.start(this,model.url,model.desc,mBanner);
     }
 }
