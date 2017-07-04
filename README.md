@@ -1,6 +1,7 @@
 # AiYaGirl
 爱吖妹纸——Retrofit+Rx+MVP架构APP体验，福利多多，不容错过<br>
 
+#### 笔者最新参赛 RxJava 2.x 教程系列，希望支持：http://www.apkbus.com/blog-898535-68185.html
 
 ## 本App从零搭建，你可以关注看到笔者的思路，强烈推荐。
 
