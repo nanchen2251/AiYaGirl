@@ -1,7 +1,7 @@
 # AiYaGirl
 爱吖妹纸——Retrofit+Rx+MVP架构APP体验，福利多多，不容错过<br>
 
-#### 笔者最新参赛 RxJava 2.x 教程系列代码，多多支持（含技术Blog）:https://github.com/nanchen2251/RxJava2Examples
+#### 笔者最新 RxJava 2.x 教程系列代码，多多支持（含技术Blog）:https://github.com/nanchen2251/RxJava2Examples
 
 ## 本App从零搭建，你可以关注看到笔者的思路，强烈推荐。
 
