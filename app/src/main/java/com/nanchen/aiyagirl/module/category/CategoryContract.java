@@ -2,7 +2,9 @@ package com.nanchen.aiyagirl.module.category;
 
 import com.nanchen.aiyagirl.base.BasePresenter;
 import com.nanchen.aiyagirl.base.BaseView;
-import com.nanchen.aiyagirl.model.CategoryResult;
+import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
+
+import java.util.List;
 
 /**
  * Author: nanchen
@@ -16,9 +18,9 @@ public interface CategoryContract {
         
         void getCategoryItemsFail(String failMessage);
 
-        void setCategoryItems(CategoryResult categoryResult);
+        void setCategoryItems(List<ResultsBean> data);
 
-        void addCategoryItems(CategoryResult categoryResult);
+        void addCategoryItems(List<ResultsBean> data);
 
         void showSwipeLoading();
 
@@ -28,7 +30,7 @@ public interface CategoryContract {
 
         String getCategoryName();
 
-        void noMore();
+        void setNoMore();
     }
     
     interface ICategoryPresenter extends BasePresenter{

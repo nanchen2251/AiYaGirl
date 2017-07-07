@@ -7,12 +7,14 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseFragment;
-import com.nanchen.aiyagirl.model.CategoryResult;
+import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
 import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryPresenter;
 import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryView;
 import com.nanchen.aiyagirl.widget.RecyclerViewDivider;
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.OnLoadMoreListener;
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.RecyclerViewWithFooter;
+
+import java.util.List;
 
 import butterknife.BindView;
 import es.dmoral.toasty.Toasty;
@@ -97,13 +99,13 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, OnR
     }
 
     @Override
-    public void setCategoryItems(CategoryResult categoryResult) {
-        mAdapter.setData(categoryResult.results);
+    public void setCategoryItems(List<ResultsBean> data) {
+        mAdapter.setData(data);
     }
 
     @Override
-    public void addCategoryItems(CategoryResult categoryResult) {
-        mAdapter.addData(categoryResult.results);
+    public void addCategoryItems(List<ResultsBean> data) {
+        mAdapter.addData(data);
 
     }
 
@@ -128,7 +130,7 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, OnR
     }
 
     @Override
-    public void noMore() {
+    public void setNoMore() {
         mRecyclerView.setEnd("没有更多数据");
     }
 
