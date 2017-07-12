@@ -40,6 +40,8 @@
     南尘<br>
     四川成都<br>
     [其它开源](https://github.com/nanchen2251/)<br>
+    [个人博客](https://nanchen2251.github.io/)<br>
+    [简书](http://www.jianshu.com/u/f690947ed5a6)<br>
     [博客园](http://www.cnblogs.com/liushilin/)
     
 #### 有码走遍天下 无码寸步难行（引自网络）
