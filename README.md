@@ -1,5 +1,5 @@
 # AiYaGirl
-爱吖妹纸——Retrofit+Rx+MVP架构APP体验，福利多多，不容错过<br>
+爱吖妹纸 —— Retrofit + RxJava + MVP 架构 APP 体验，福利多多，不容错过<br>
 
 ## 本App从零搭建，你可以关注看到笔者的思路，强烈推荐。
 
