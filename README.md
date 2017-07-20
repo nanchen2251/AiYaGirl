@@ -30,10 +30,28 @@
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/1.jpg) 
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
-## 特别鸣谢
-[代码家](https://github.com/daimajia) <br>
-[干货集中营](http://gank.io/) 
+## 更新日志
 
+V 1.0.4<br>
+ * [新增] 加载图片成功前增加加载进度条 ProgressBar
+ * [修复] 解决侧滑关闭当前页面背景为白色的 bug
+
+V 1.0.3<br>
+ * [新增] 上拉加载更多，没有数据时相应的正确显示
+ * [新增] 大图预览和保存图片到本地
+ 
+V 1.0.2<br>
+ * [新增] 支付宝捐赠开发者
+ * [新增] 完善侧滑菜单栏目
+ 
+ V 1.0.2<br>
+ * [新增] 项目主页
+ * [新增] 沉浸式体验
+
+ V 1.0.2<br>
+ * [新增] 闪屏页面随机图
+ * [新增] 仿网易云音乐闪屏跳转主页动画
+ 
 ### 关于作者
     南尘<br>
     四川成都<br>
@@ -45,6 +63,10 @@
     欢迎投稿(关注)我的唯一公众号，公众号搜索 nanchen 或者扫描下方二维码：<br>
     ![](http://images2015.cnblogs.com/blog/845964/201707/845964-20170718083641599-1963842541.jpg)
 
+
+## 特别鸣谢
+[代码家](https://github.com/daimajia) <br>
+[干货集中营](http://gank.io/) 
     
 #### 有码走遍天下 无码寸步难行（引自网络）
 
