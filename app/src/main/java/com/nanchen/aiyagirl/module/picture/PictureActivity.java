@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -22,6 +23,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseActivity;
+import com.nanchen.aiyagirl.module.picture.PictureContract.PictureView;
 import com.nanchen.aiyagirl.module.picture.PictureContract.Presenter;
 import com.nanchen.aiyagirl.utils.Utils;
 import com.youth.banner.Banner;
@@ -37,7 +39,7 @@ import butterknife.OnClick;
  * Email: liushilin520@foxmail.com
  * Date: 2017-04-24  10:11
  */
-public class PictureActivity extends BaseActivity {
+public class PictureActivity extends BaseActivity implements PictureView{
 
     public static final String EXTRA_IMAGE_URL = "com.nanchen.aiyagirl.module.picture.PictureActivity.EXTRA_IMAGE_URL";
     public static final String EXTRA_IMAGE_TITLE = "com.nanchen.aiyagirl.module.picture.PictureActivity.EXTRA_IMAGE_TITLE";
@@ -52,6 +54,8 @@ public class PictureActivity extends BaseActivity {
     ImageButton mBtnSave;
     @BindView(R.id.picture_app_bar)
     AppBarLayout mAppBarLayout;
+    @BindView(R.id.picture_progress)
+    ProgressBar mProgressBar;
 
     private Presenter mPresenter;
 
@@ -83,6 +87,7 @@ public class PictureActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceSate) {
+        showProgress();
         mPresenter = new PicturePresenter(this);
         parseIntent();
         ViewCompat.setTransitionName(mImgView, TRANSIT_PIC);
@@ -107,6 +112,7 @@ public class PictureActivity extends BaseActivity {
                 .into(new SimpleTarget<GlideDrawable>() {
                     @Override
                     public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        hideProgress();
                         mImgView.setImageDrawable(resource);
                     }
                 });
@@ -133,5 +139,21 @@ public class PictureActivity extends BaseActivity {
                 getSupportActionBar().show();
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.gc();
+    }
+
+    @Override
+    public void hideProgress() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showProgress() {
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 }

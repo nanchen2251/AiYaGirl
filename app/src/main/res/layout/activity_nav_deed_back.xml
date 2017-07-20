@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/nav_deed_back"
+    android:background="@color/colorPageBg"
     tools:context="com.nanchen.aiyagirl.module.navdeedback.NavDeedBackActivity">
 
 

@@ -45,25 +45,32 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+
         <!-- 项目主页 -->
         <activity
             android:name=".module.navhome.NavHomeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+
         <!-- 问题反馈 -->
         <activity
             android:name=".module.navdeedback.NavDeedBackActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+
         <!-- 关于我们 -->
         <activity
             android:name=".module.navabout.NavAboutActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".module.picture.PictureActivity">
+
+        <!--大图页面-->
+        <activity android:name=".module.picture.PictureActivity"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
         </activity>
     </application>
 

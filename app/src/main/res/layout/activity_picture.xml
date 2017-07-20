@@ -21,8 +21,14 @@
             app:navigationIcon="@mipmap/icon_back"
             app:title="关于爱吖妹纸"/>
 
-
     </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/picture_progress"
+        android:visibility="visible"
+        android:layout_gravity="center"/>
 
 
     <com.github.chrisbanes.photoview.PhotoView

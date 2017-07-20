@@ -10,6 +10,9 @@
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/blue</item>
         <item name="colorAccent">@color/blue</item>
+        <!--侧滑返回需要的 Theme -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
         <!--正常状态下字体颜色和icon颜色-->
         <!--<item name="android:textColorPrimary">@color/colorTheme</item>-->
     </style>
@@ -31,7 +34,7 @@
         <item name="dialogPreferredPadding">120dp</item>
     </style>
 
-    <!--titleBar样式-->
+    <!--titleBar 样式-->
     <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="actionBarItemBackground">@drawable/toolbarItemBackground</item>
         <item name="selectableItemBackground">@drawable/toolbarItemBackground</item>
