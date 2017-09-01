@@ -43,6 +43,8 @@ public class NavHomeActivity extends BaseActivity {
                 finish();
             }
         });
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//不添加这句华为手机会出现标题显示不完整的问题
     }
 
     @OnClick(R.id.nav_home_fab)

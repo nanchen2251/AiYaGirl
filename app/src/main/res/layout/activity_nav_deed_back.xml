@@ -13,6 +13,7 @@
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
+        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/nav_deed_back_toolbar"
         app:navigationIcon="@mipmap/icon_back"

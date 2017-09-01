@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/nav_about_toolbar"
+        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
         android:background="@color/blue"
         app:navigationIcon="@mipmap/icon_back"
         app:title="关于爱吖妹纸"/>
