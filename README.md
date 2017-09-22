@@ -61,8 +61,9 @@ V 1.0.2<br>
     
 ### 推荐
 
-这里推荐一下 stormzhang 的小密圈「帅张和他的朋友们」，分享你所想要的
-http://t.xiaomiquan.com/VBuZRVV
+这里推荐一下 stormzhang 的小密圈「帅张和他的朋友们」，体验用心的帅比张。<br>
+点击后面链接或扫描下方二维码加入，http://t.xiaomiquan.com/VBuZRVV<br>
+![](https://github.com/nanchen2251/AiYaSchoolPush/blob/master/photo/stormzhang.png)
 
 ## 特别鸣谢
 [代码家](https://github.com/daimajia) <br>
