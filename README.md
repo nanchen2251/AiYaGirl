@@ -29,7 +29,7 @@
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
 ## 更新日志
-V 1.0.4<br>
+V 1.0.5<br>
  * [优化] 优化标题栏文字为白色，使主题更搭。
  * [修复] 解决部分手机上 Design 拉伸标题栏扭曲的 bug。
 
