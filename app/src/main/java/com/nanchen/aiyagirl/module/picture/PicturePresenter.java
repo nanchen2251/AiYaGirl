@@ -51,20 +51,10 @@ public class PicturePresenter implements Presenter {
     }
 
     @Override
-    public void saveGirl(final String url, final int width, final int height, final String title) {
+    public void saveGirl(final String url, final Bitmap bitmap, final String title) {
         Observable.create(new OnSubscribe<Bitmap>() {
             @Override
             public void call(Subscriber<? super Bitmap> subscriber) {
-                Bitmap bitmap = null;
-                try {
-                    bitmap = Glide.with(Utils.getContext())
-                            .load(url)
-                            .asBitmap()
-                            .into(width, height)
-                            .get();
-                } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
                 if (bitmap == null) {
                     subscriber.onError(new Exception("无法下载到图片！"));
                 }
