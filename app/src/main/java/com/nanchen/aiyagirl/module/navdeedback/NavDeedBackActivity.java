@@ -45,34 +45,55 @@ public class NavDeedBackActivity extends BaseActivity {
 
     @OnClick({R.id.tv_issues, R.id.tv_other, R.id.tv_qq, R.id.tv_email, R.id.tv_blog})
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.tv_issues:
-                Intent intent = new Intent(this, WebViewActivity.class);
+                intent = new Intent(this, WebViewActivity.class);
                 intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
                 intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
                 startActivity(intent);
                 break;
             case R.id.tv_other:
-                Intent intent1 = new Intent(this, WebViewActivity.class);
-                intent1.putExtra(WebViewActivity.GANK_TITLE, "nanchen2251");
-                intent1.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251");
-                startActivity(intent1);
+                intent = new Intent(this, WebViewActivity.class);
+                intent.putExtra(WebViewActivity.GANK_TITLE, "nanchen2251");
+                intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251");
+                startActivity(intent);
                 break;
             case R.id.tv_qq:
-                String url = "mqqwpa://im/chat?chat_type=wpa&uin=503233512";
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                if (isQQClientAvailable()) {
+                    String url = "mqqwpa://im/chat?chat_type=wpa&uin=503233512";
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                } else
+                    Toasty.error(this, "当前设备未安装QQ").show();
                 break;
             case R.id.tv_email:
-                Intent data = new Intent(Intent.ACTION_SENDTO);
-                data.setData(Uri.parse("mailto:liushilin520@foxmail.com"));
-                startActivity(data);
+                intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:liushilin520@foxmail.com"));
+                startActivity(intent);
                 break;
             case R.id.tv_blog:
-                Intent intent2 = new Intent(this, WebViewActivity.class);
-                intent2.putExtra(WebViewActivity.GANK_TITLE, "博客园");
-                intent2.putExtra(WebViewActivity.GANK_URL, "http://www.cnblogs.com/liushilin/");
-                startActivity(intent2);
+                intent = new Intent(this, WebViewActivity.class);
+                intent.putExtra(WebViewActivity.GANK_TITLE, "博客园");
+                intent.putExtra(WebViewActivity.GANK_URL, "http://www.cnblogs.com/liushilin/");
+                startActivity(intent);
                 break;
         }
+    }
+
+    /**
+     * 判断qq是否可用
+     */
+    public static boolean isQQClientAvailable() {
+        final PackageManager packageManager = Utils.getContext().getPackageManager();
+        List<PackageInfo> packageInfo = packageManager.getInstalledPackages(0);
+        if (packageInfo != null) {
+            for (int i = 0; i < packageInfo.size(); i++) {
+                String pn = packageInfo.get(i).packageName;
+                if (pn.equals("com.tencent.mobileqq")) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
