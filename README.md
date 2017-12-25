@@ -1,7 +1,7 @@
 # AiYaGirl
 爱吖妹纸 —— Retrofit + RxJava + MVP 架构 APP 体验，福利多多，不容错过<br>
 
-爱吖妹纸数据来源于代码家的[干货集中营](http://gank.io/),UI 和部分设计参考自[云阅](https://github.com/youlookwhat/CloudReader） 那么多完整的 APP, 你选择了我，这是我的幸运。<br>
+爱吖妹纸数据来源于代码家的[干货集中营](http://gank.io/),UI 和部分设计参考自[云阅](https://github.com/youlookwhat/CloudReader) 那么多完整的 APP, 你选择了我，这是我的幸运。<br>
 
 
 从第一次在博客园上写博客到现在，我一次一次地提高博文的质量和代码的可读性，都是为了你们，因为有你们，才有我。<br>
