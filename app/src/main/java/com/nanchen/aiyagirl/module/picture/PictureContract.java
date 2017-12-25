@@ -17,6 +17,6 @@ public interface PictureContract {
     }
 
     interface Presenter extends BasePresenter{
-        void saveGirl(String url, int width,int height,String title);
+        void saveGirl(String url, Bitmap bitmap, String title);
     }
 }
