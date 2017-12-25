@@ -1,5 +1,7 @@
 package com.nanchen.aiyagirl.module.picture;
 
+import android.graphics.Bitmap;
+
 import com.nanchen.aiyagirl.base.BasePresenter;
 import com.nanchen.aiyagirl.base.BaseView;
 
