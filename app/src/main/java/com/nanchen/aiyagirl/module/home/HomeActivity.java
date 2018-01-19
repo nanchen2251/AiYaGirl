@@ -31,6 +31,7 @@ import com.nanchen.aiyagirl.module.navhome.NavHomeActivity;
 import com.nanchen.aiyagirl.module.picture.PictureActivity;
 import com.nanchen.aiyagirl.module.web.WebViewActivity;
 import com.nanchen.aiyagirl.utils.AlipayZeroSdk;
+import com.nanchen.aiyagirl.utils.AndroidWorkaround;
 import com.nanchen.aiyagirl.utils.PerfectClickListener;
 import com.nanchen.aiyagirl.utils.ScreenUtil;
 import com.nanchen.aiyagirl.utils.StatusBarUtil;
@@ -100,6 +101,10 @@ public class HomeActivity extends BaseActivity implements IHomeView,OnBannerList
             mToolbar.setLayoutParams(layoutParams);
         }
 
+        // 华为底部导航栏适配
+        if (AndroidWorkaround.checkDeviceHasNavigationBar(this)) {
+            AndroidWorkaround.assistActivity(findViewById(android.R.id.content));
+        }
 //        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
 //        params.setMargins(0,ScreenUtil.getStatusBarHeight(this),0,0);
 //        params.gravity = Gravity.CENTER_HORIZONTAL;

@@ -1,6 +1,8 @@
 package com.nanchen.aiyagirl.module.navdeedback;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,9 +12,13 @@ import android.view.View.OnClickListener;
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseActivity;
 import com.nanchen.aiyagirl.module.web.WebViewActivity;
+import com.nanchen.aiyagirl.utils.Utils;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import es.dmoral.toasty.Toasty;
 
 
 /**
