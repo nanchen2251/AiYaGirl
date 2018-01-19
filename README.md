@@ -31,6 +31,9 @@
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
 ## 更新日志
+V 1.0.6<br>
+ * [修复] 修复主页在华为手机上虚拟按键也被沉浸式挡住的适配问题。
+
 V 1.0.5<br>
  * [优化] 优化标题栏文字为白色，使主题更搭。
  * [修复] 优化存储图片，直接采用 Bitmap。
