@@ -1,7 +1,9 @@
 # AiYaGirl
 爱吖妹纸 —— Retrofit + RxJava + MVP 架构 APP 体验，福利多多，不容错过<br>
 
-爱吖妹纸数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader) 那么多完整的 APP, 你选择了我，这是我的幸运。<br>
+#### 号外：听说「nanchen」搞了一个 Android 开发者的免费福利，不行你看：[给 Android 开发者的一点福利：免费模拟面试](http://mp.weixin.qq.com/s/WRdSmGxwDp-CpQcSlmJYlg)
+
+爱吖妹纸数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader), 那么多完整的 APP, 你选择了我，这是我的幸运。<br>
 
 
 从第一次在博客园上写博客到现在，我一次一次地提高博文的质量和代码的可读性，都是为了你们，因为有你们，才有我。<br>
@@ -29,9 +31,14 @@
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
 ## 更新日志
+V 1.0.6<br>
+ * [修复] 修复主页在华为手机上虚拟按键也被沉浸式挡住的适配问题。
+
 V 1.0.5<br>
  * [优化] 优化标题栏文字为白色，使主题更搭。
+ * [修复] 优化存储图片，直接采用 Bitmap。
  * [修复] 解决部分手机上 Design 拉伸标题栏扭曲的 bug。
+ * [修复] 解决手机没有安装 QQ 可能出现的崩溃问题。
 
 V 1.0.4<br>
  * [新增] 加载图片成功前增加加载进度条 ProgressBar
