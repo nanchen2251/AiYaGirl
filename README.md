@@ -1,7 +1,7 @@
 # AiYaGirl
 爱吖妹纸 —— Retrofit + RxJava + MVP 架构 APP 体验，福利多多，不容错过<br>
 
-### 该版本为 kotlin 版本，kotlin 大法好，作为一名 Android 开发者，感觉加入 kotlin 开发大军吧~
+### 该版本为 kotlin 版本，kotlin 大法好，作为一名 Android 开发者，赶紧加入 kotlin 开发大军吧~
 
 爱吖妹纸数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader), 那么多完整的 APP, 你选择了我，这是我的幸运。<br>
 
