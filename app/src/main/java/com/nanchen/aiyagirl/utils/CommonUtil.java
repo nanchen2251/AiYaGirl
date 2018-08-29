@@ -71,7 +71,7 @@ public class CommonUtil {
     }
 
     public static Resources getResoure() {
-        return App.getInstance().getResources();
+        return App.instance.getResources();
     }
 
     public static String[] getStringArray(int resid) {

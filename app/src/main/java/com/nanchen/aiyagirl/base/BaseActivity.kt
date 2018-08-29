@@ -25,7 +25,7 @@ abstract class BaseActivity : AppCompatActivity(), BGASwipeBackHelper.Delegate {
 
     private var mCompositeSubscription: CompositeSubscription? = null
 
-    protected lateinit var mSwipeBackHelper: BGASwipeBackHelper
+    private lateinit var mSwipeBackHelper: BGASwipeBackHelper
 
     /**
      * 获取布局ID
