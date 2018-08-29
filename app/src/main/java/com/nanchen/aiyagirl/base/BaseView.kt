@@ -1,4 +1,4 @@
-package com.nanchen.aiyagirl.base;
+package com.nanchen.aiyagirl.base
 
 /**
  * View父接口，用于后面mvp架构
@@ -8,5 +8,4 @@ package com.nanchen.aiyagirl.base;
  * Date: 2017-04-07  16:26
  */
 
-public interface BaseView {
-}
+interface BaseView
