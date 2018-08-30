@@ -1,29 +1,34 @@
 # AiYaGirl
-爱吖妹纸 —— Retrofit + RxJava + MVP 架构 APP 体验，福利多多，不容错过<br>
+「爱吖妹纸」是南尘的「爱吖系列」的较为完善的一款 APP，数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader)
 
-### 目前正在进行 kotlin 版本重构，可直接切换到 [kotlin](https://github.com/nanchen2251/AiYaGirl/tree/kotlin) 分支查看即可！
-### 目前正在进行 kotlin 版本重构，可直接切换到 [kotlin](https://github.com/nanchen2251/AiYaGirl/tree/kotlin) 分支查看即可！
-### 目前正在进行 kotlin 版本重构，可直接切换到 [kotlin](https://github.com/nanchen2251/AiYaGirl/tree/kotlin) 分支查看即可！
+GitHub 上挺多开源的完整 APP，它们各有各的特色，我很感谢你，看到了这儿，这是我的幸运。
 
+这款 APP 更像是一个 sample，内含 Kotlin 版本和 Java 版本写法，我们始终相信拥有完全对比版本的它，会是你学习 kotlin 的良药，同样的，即使你不喜欢 Kotlin，你同样可以直接查看 Java MVP 架构的学习，因为我们的架构思想就是采用地 MVP。
 
-爱吖妹纸数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader), 那么多完整的 APP, 你选择了我，这是我的幸运。<br>
+最近 Retrofit、RxJava 很火，所以我们的网络请求采用的 Retrofit，并结合 RxJava 进行调用。
 
+如果你对 RxJava 不是很熟悉，我强烈推荐你看看我的 [RxJava2Examples](https://github.com/nanchen2251/RxJava2Examples) 开源库，除了代码，我们还有完整的一套入门教程，希望不会让你失望~
 
-从第一次在博客园上写博客到现在，我一次一次地提高博文的质量和代码的可读性，都是为了你们，因为有你们，才有我。<br>
+GitHub 和公众号我都会保持维护，期待你与我进行比心的交流。
 
+因为我也曾遇到各种棘手的问题，到处询问不到答案。
 
-这是我 [爱吖校推](https://github.com/nanchen2251/AiYaSchoolPush) 后的第二个开源的 APP，主要采取 Retrofit + RxJava + MVP 这套最近火热的开发体系。<br>
+那时候的我，也许正如现在的你。
 
+而我，也还在这条道路上默默前行~
 
-期待你与我进行心灵交流。因为我也曾遇到各种棘手的问题，到处询问不到答案<br>
+## 目前的分支
+- [kotlin-mvp](https://github.com/nanchen2251/AiYaGirl/tree/kotlin)
+这是目前在维护的 kotlin 版本的分支，我希望你能通过这个简单的 APP 明白 kotlin 到底是有多么的好用~作为 Google 官推的语言，你真的应该学习。
+- [java-mvp](https://github.com/nanchen2251/AiYaGirl/tree/java-mvp)
+这是 java 版本的分支，也是在维护，主要是采用 Retrofit && RxJava && MVP 的项目，大多数人以前是跟着这个来的~
+- [mvp-dagger](https://github.com/nanchen2251/AiYaGirl/tree/java-mvp)
+这同样是使用 java 版本，主要是想告诉大家如何使用 dagger，不过目前暂时停止维护，后期再考虑吧~
 
-
-那个时候的我，也许正如现在的你。而我，也还在这条道路上默默前行。<br>
-    
 #### * 开源不易，希望给个 Star 或者 Fork 奖励
 #### * 开发交流QQ群：118116509 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e6ad4af66393684e1d0c9441403b049d2d5670ec0ce9f72150e694cbb7c16b0a"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Android神技侧漏交流群" title="Android神技侧漏交流群"></a>( 点击图标即可加入 )<br>
 #### * 拥抱开源：https://github.com/nanchen2251
-#### * 有问题请联系邮箱：（nanchen2251@163.com）
+#### * 有问题请联系邮箱：（liushilin2251@gmail.com）
 
 ## 效果演示
 ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/GIF1.gif)
@@ -32,34 +37,6 @@
 
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/1.jpg) 
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
-
-## 更新日志
-V 1.0.6<br>
- * [修复] 修复主页在华为手机上虚拟按键也被沉浸式挡住的适配问题。
-
-V 1.0.5<br>
- * [优化] 优化标题栏文字为白色，使主题更搭。
- * [修复] 优化存储图片，直接采用 Bitmap。
- * [修复] 解决部分手机上 Design 拉伸标题栏扭曲的 bug。
- * [修复] 解决手机没有安装 QQ 可能出现的崩溃问题。
-
-V 1.0.4<br>
- * [新增] 加载图片成功前增加加载进度条 ProgressBar
- * [修复] 解决侧滑关闭当前页面背景为白色的 bug
-
-V 1.0.3<br>
- * [新增] 上拉加载更多，没有数据时相应的正确显示
- * [新增] 大图预览和保存图片到本地
- 
-V 1.0.2<br>
- * [新增] 支付宝捐赠开发者
- * [新增] 完善侧滑菜单栏目
- 
- V 1.0.1<br>
- * [新增] 项目主页
- * [新增] 沉浸式体验
- * [新增] 闪屏页面随机图
- * [新增] 仿网易云音乐闪屏跳转主页动画
  
 ### 关于作者
     南尘<br>
@@ -70,7 +47,7 @@ V 1.0.2<br>
     [博客园](http://www.cnblogs.com/liushilin/)<br>
     交流群：118116509<br>
     欢迎投稿(关注)我的唯一公众号，公众号搜索 nanchen 或者扫描下方二维码：<br>
-    ![](http://images2015.cnblogs.com/blog/845964/201707/845964-20170718083641599-1963842541.jpg)
+    ![](https://mmbiz.qpic.cn/mmbiz_jpg/Sib26KFUYxcQib9JiadfxjicYxFvXSKibYhxNg87zXyKzk0wxPdlHbsqSSXK8ZzE5wUX8UkSfVDUMBKzpVkbmlY2u2A/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 ## 特别鸣谢
 [代码家](https://github.com/daimajia) <br>
@@ -96,7 +73,7 @@ V 1.0.2<br>
     
 ## Licenses
 ```
- Copyright 2017 nanchen(刘世麟)
+ Copyright 2018 nanchen(刘世麟)
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
