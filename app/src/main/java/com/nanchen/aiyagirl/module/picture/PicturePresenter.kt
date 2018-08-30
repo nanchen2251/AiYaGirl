@@ -38,7 +38,7 @@ class PicturePresenter(private val mContext: Context) : Presenter {
             subscriber.onError(Exception("无法下载到图片！"))
             subscriber.onNext(bitmap)
             subscriber.onCompleted()
-        }).flatMap { bitmap ->
+        }).flatMap { bitmap1 ->
             val appDir = File(Environment.getExternalStorageDirectory(), mContext.resources.getString(R.string.app_name))
             if (!appDir.exists()) {
                 appDir.mkdir()
@@ -47,8 +47,8 @@ class PicturePresenter(private val mContext: Context) : Presenter {
             val file = File(appDir, fileName)
             try {
                 val fos = FileOutputStream(file)
-                if (bitmap != null) {
-                    bitmap.compress(CompressFormat.JPEG, 100, fos)
+                if (bitmap1 != null) {
+                    bitmap1.compress(CompressFormat.JPEG, 100, fos)
                     fos.flush()
                     fos.close()
                 }

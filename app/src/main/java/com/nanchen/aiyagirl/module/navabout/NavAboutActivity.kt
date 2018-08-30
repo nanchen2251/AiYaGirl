@@ -27,7 +27,7 @@ class NavAboutActivity : BaseActivity() {
         mTvVersionName = tv_version_name
 
         mToolbar.setNavigationOnClickListener { finish() }
-        mTvVersionName.text = "当前版本 V${PackageUtil.getVersionName()}"
+        mTvVersionName.text = "当前版本 V${PackageUtil.versionName}"
     }
 
 

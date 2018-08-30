@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nanchen.aiyagirl.utils;
+package com.nanchen.aiyagirl.utils
 
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPropertyAnimatorListener;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
-import android.view.View;
+import android.support.v4.view.ViewCompat
+import android.support.v4.view.ViewPropertyAnimatorListener
+import android.support.v4.view.animation.LinearOutSlowInInterpolator
+import android.view.View
 
-public class AnimatorUtil {
+object AnimatorUtil {
 
-    public static final LinearOutSlowInInterpolator FAST_OUT_SLOW_IN_INTERPOLATOR = new LinearOutSlowInInterpolator();
+    private val FAST_OUT_SLOW_IN_INTERPOLATOR = LinearOutSlowInInterpolator()
 
     // 显示view
-    public static void scaleShow(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
-        view.setVisibility(View.VISIBLE);
+    fun scaleShow(view: View, viewPropertyAnimatorListener: ViewPropertyAnimatorListener?) {
+        view.visibility = View.VISIBLE
         ViewCompat.animate(view)
                 .scaleX(1.0f)
                 .scaleY(1.0f)
@@ -34,11 +34,11 @@ public class AnimatorUtil {
                 .setDuration(800)
                 .setListener(viewPropertyAnimatorListener)
                 .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
-                .start();
+                .start()
     }
 
     // 隐藏view
-    public static void scaleHide(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
+    fun scaleHide(view: View, viewPropertyAnimatorListener: ViewPropertyAnimatorListener) {
         ViewCompat.animate(view)
                 .scaleX(0.0f)
                 .scaleY(0.0f)
@@ -46,7 +46,7 @@ public class AnimatorUtil {
                 .setDuration(800)
                 .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
                 .setListener(viewPropertyAnimatorListener)
-                .start();
+                .start()
     }
 
 }

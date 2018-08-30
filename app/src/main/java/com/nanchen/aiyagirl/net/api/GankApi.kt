@@ -1,10 +1,10 @@
-package com.nanchen.aiyagirl.net.api;
+package com.nanchen.aiyagirl.net.api
 
-import com.nanchen.aiyagirl.model.CategoryResult;
+import com.nanchen.aiyagirl.model.CategoryResult
 
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import rx.Observable;
+import retrofit2.http.GET
+import retrofit2.http.Path
+import rx.Observable
 
 /**
  *
@@ -15,7 +15,7 @@ import rx.Observable;
  * Date: 2017-04-14  11:23
  */
 
-public interface GankApi {
+interface GankApi {
 
     /**
      * 根据category获取Android、iOS等干货数据
@@ -24,5 +24,5 @@ public interface GankApi {
      * @param page      页数
      */
     @GET("data/{category}/{count}/{page}")
-    Observable<CategoryResult> getCategoryData(@Path("category")String category, @Path("count")int count, @Path("page")int page);
+    fun getCategoryData(@Path("category") category: String, @Path("count") count: Int, @Path("page") page: Int): Observable<CategoryResult>
 }
