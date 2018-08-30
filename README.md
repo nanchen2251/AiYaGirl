@@ -18,10 +18,10 @@ GitHub 和公众号我都会保持维护，期待你与我进行比心的交流�
 
 ## 目前的分支
 | Sample | Description |
-| ------------- | ------------- |
-| [kotlin-mvp](https://github.com/nanchen2251/AiYaGirl/tree/kotlin)| 这是目前在维护的 kotlin 版本的分支~<br>我希望你能通过这个简单的 APP 明白 kotlin 到底是有多么的好用~<br>作为 Google 官推的语言，你真的应该学习。 |
-| [java-mvp](https://github.com/nanchen2251/AiYaGirl/tree/java-mvp)| 这是 java 版本的分支，也是在维护，主要是采用 Retrofit && RxJava && MVP 的项目，大多数人以前是跟着这个来的~|
-| [mvp-dagger](https://github.com/nanchen2251/AiYaGirl/tree/java-mvp)| 这同样是使用 java 版本，主要是想告诉大家如何使用 dagger，不过目前暂时停止维护，后期再考虑吧~|
+| ---------------- | ------------- |
+| **[kotlin-mvp](https://github.com/nanchen2251/AiYaGirl/tree/kotlin)**| 这是目前在维护的 kotlin 版本的分支~<br>我希望你能通过这个简单的 APP 明白 kotlin 到底是有多么的好用~<br>作为 Google 官推的语言，你真的应该学习。 |
+| **[java-mvp](https://github.com/nanchen2251/AiYaGirl/tree/java-mvp)**| 这是 java 版本的分支，也是在维护，主要是采用 Retrofit && RxJava && MVP 的项目，大多数人以前是跟着这个来的~|
+| **[mvp-dagger](https://github.com/nanchen2251/AiYaGirl/tree/java-mvp)**| 这同样是使用 java 版本，主要是想告诉大家如何使用 dagger，不过目前暂时停止维护，后期再考虑吧~|
 
 #### * 开源不易，希望给个 Star 或者 Fork 奖励
 #### * 开发交流QQ群：118116509 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e6ad4af66393684e1d0c9441403b049d2d5670ec0ce9f72150e694cbb7c16b0a"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Android神技侧漏交流群" title="Android神技侧漏交流群"></a>( 点击图标即可加入 )<br>
