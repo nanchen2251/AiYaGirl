@@ -27,7 +27,7 @@ abstract class BaseFragment : Fragment() {
     /**
      * 界面初始化
      */
-    protected abstract fun init()
+    protected abstract fun init(view: View)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return if (contentViewLayoutID != 0) {
@@ -40,7 +40,7 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         unbinder = ButterKnife.bind(this, view)
-        init()
+        init(view)
     }
 
     override fun onDestroyView() {

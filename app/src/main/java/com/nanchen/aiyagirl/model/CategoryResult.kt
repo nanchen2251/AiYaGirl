@@ -10,7 +10,7 @@ package com.nanchen.aiyagirl.model
 
 data class CategoryResult(
         var error: Boolean,
-        var results: List<ResultsBean>?
+        var results: List<ResultsBean> = ArrayList()
 )
 
 data class ResultsBean(

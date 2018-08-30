@@ -127,17 +127,17 @@ public class HomeActivity extends BaseActivity implements IHomeView,OnBannerList
 
         CommonViewPagerAdapter infoPagerAdapter = new CommonViewPagerAdapter(getSupportFragmentManager(),titles);
         // App
-        CategoryFragment appFragment = CategoryFragment.newInstance(titles[0]);
+        CategoryFragment appFragment = CategoryFragment.Companion.newInstance(titles[0]);
         // Android
-        CategoryFragment androidFragment = CategoryFragment.newInstance(titles[1]);
+        CategoryFragment androidFragment = CategoryFragment.Companion.newInstance(titles[1]);
         // iOS
-        CategoryFragment iOSFragment = CategoryFragment.newInstance(titles[2]);
+        CategoryFragment iOSFragment = CategoryFragment.Companion.newInstance(titles[2]);
         // 前端
-        CategoryFragment frontFragment = CategoryFragment.newInstance(titles[3]);
+        CategoryFragment frontFragment = CategoryFragment.Companion.newInstance(titles[3]);
         // 瞎推荐
-        CategoryFragment referenceFragment = CategoryFragment.newInstance(titles[4]);
+        CategoryFragment referenceFragment = CategoryFragment.Companion.newInstance(titles[4]);
         // 拓展资源s
-        CategoryFragment resFragment = CategoryFragment.newInstance(titles[5]);
+        CategoryFragment resFragment = CategoryFragment.Companion.newInstance(titles[5]);
 
         infoPagerAdapter.addFragment(appFragment);
         infoPagerAdapter.addFragment(androidFragment);

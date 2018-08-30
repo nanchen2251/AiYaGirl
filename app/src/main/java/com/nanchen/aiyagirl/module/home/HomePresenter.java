@@ -69,8 +69,7 @@ public class HomePresenter implements IHomePresenter{
 
                     @Override
                     public void onNext(CategoryResult categoryResult) {
-                        if (categoryResult != null && categoryResult.getResults() != null
-                                && categoryResult.getResults().size() > 0){
+                        if (categoryResult != null && !categoryResult.getResults().isEmpty()){
                             List<String> imgUrls = new ArrayList<>();
                             for (ResultsBean result : categoryResult.getResults()) {
                                 if (!result.getUrl().isEmpty()){
@@ -79,7 +78,6 @@ public class HomePresenter implements IHomePresenter{
                                 mModels.add(new PictureModel(result.getDesc(), result.getUrl()));
                             }
                             mHomeView.setBanner(imgUrls);
-
                         }else{
                             mHomeView.showBannerFail("Banner 图加载失败");
                         }
