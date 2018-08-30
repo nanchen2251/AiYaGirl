@@ -36,9 +36,12 @@ class HomePresenter internal constructor(private val mHomeView: IHomeView) : IHo
     }
 
     override fun unSubscribe() {
-        if (mSubscription != null && !mSubscription!!.isUnsubscribed) {
-            mSubscription!!.unsubscribe()
+        mSubscription?.let {
+            if (!mSubscription!!.isUnsubscribed) {
+                mSubscription!!.unsubscribe()
+            }
         }
+
     }
 
     override fun getBannerData() {

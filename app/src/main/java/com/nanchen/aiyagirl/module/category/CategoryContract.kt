@@ -10,29 +10,27 @@ import com.nanchen.aiyagirl.model.ResultsBean
  * Date: 2017-04-14  10:14
  */
 
-interface CategoryContract {
 
-    interface ICategoryView : BaseView {
+interface ICategoryView : BaseView {
 
-        val categoryName: String
+    val categoryName: String
 
-        fun getCategoryItemsFail(failMessage: String)
+    fun getCategoryItemsFail(failMessage: String)
 
-        fun setCategoryItems(data: List<ResultsBean>)
+    fun setCategoryItems(data: List<ResultsBean>)
 
-        fun addCategoryItems(data: List<ResultsBean>)
+    fun addCategoryItems(data: List<ResultsBean>)
 
-        fun showSwipeLoading()
+    fun showSwipeLoading()
 
-        fun hideSwipeLoading()
+    fun hideSwipeLoading()
 
-        fun setLoading()
+    fun setLoading()
 
-        fun setNoMore()
-    }
+    fun setNoMore()
+}
 
-    interface ICategoryPresenter : BasePresenter {
+interface ICategoryPresenter : BasePresenter {
 
-        fun getCategoryItems(isRefresh: Boolean)
-    }
+    fun getCategoryItems(isRefresh: Boolean)
 }

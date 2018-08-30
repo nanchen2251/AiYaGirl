@@ -17,10 +17,10 @@ import java.util.*
 
 object ConstantsImageUrl {
     // 电影栏头部的图片
-    val ONE_URL_01 = "http://ojyz0c8un.bkt.clouddn.com/one_01.png"
+    const val ONE_URL_01 = "http://ojyz0c8un.bkt.clouddn.com/one_01.png"
 
     // 头像
-    val IC_AVATAR = "http://ojyz0c8un.bkt.clouddn.com/ic_avatar.png"
+    const val IC_AVATAR = "http://ojyz0c8un.bkt.clouddn.com/ic_avatar.png"
 
     // 过渡图的图片链接
     private const val TRANSITION_URL_01 = "http://ojyz0c8un.bkt.clouddn.com/b_1.jpg"

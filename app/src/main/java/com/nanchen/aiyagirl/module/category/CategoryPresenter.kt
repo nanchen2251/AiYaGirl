@@ -2,8 +2,6 @@ package com.nanchen.aiyagirl.module.category
 
 import com.nanchen.aiyagirl.config.GlobalConfig
 import com.nanchen.aiyagirl.model.CategoryResult
-import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryPresenter
-import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryView
 import com.nanchen.aiyagirl.net.NetWork
 import rx.Observer
 import rx.Subscription
@@ -24,15 +22,17 @@ class CategoryPresenter(
     : ICategoryPresenter {
 
     private var mPage = 1
-    private lateinit var mSubscription: Subscription
+    private var mSubscription: Subscription? = null
 
     override fun subscribe() {
         getCategoryItems(true)
     }
 
     override fun unSubscribe() {
-        if (!mSubscription.isUnsubscribed) {
-            mSubscription.unsubscribe()
+        mSubscription?.let {
+            if (!mSubscription!!.isUnsubscribed) {
+                mSubscription!!.unsubscribe()
+            }
         }
     }
 

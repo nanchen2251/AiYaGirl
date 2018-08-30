@@ -61,8 +61,8 @@ class WebViewActivity : BaseActivity(), IWebView {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         mWebPresenter.unSubscribe()
+        super.onDestroy()
     }
 
     override fun setGankTitle(title: String) {

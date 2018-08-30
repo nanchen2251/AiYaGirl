@@ -9,8 +9,6 @@ import com.nanchen.aiyagirl.App
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseFragment
 import com.nanchen.aiyagirl.model.ResultsBean
-import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryPresenter
-import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryView
 import com.nanchen.aiyagirl.widget.RecyclerViewDivider
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.OnLoadMoreListener
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.RecyclerViewWithFooter
@@ -27,8 +25,8 @@ import kotlinx.android.synthetic.main.fragment_category.view.*
  */
 
 class CategoryFragment : BaseFragment(), ICategoryView, OnRefreshListener, OnLoadMoreListener {
-    lateinit var mRecyclerView: RecyclerViewWithFooter
-    lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var mRecyclerView: RecyclerViewWithFooter
+    private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
     override lateinit var categoryName: String
     private lateinit var mAdapter: CategoryRecyclerAdapter

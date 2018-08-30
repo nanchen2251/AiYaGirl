@@ -58,7 +58,7 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
     lateinit var mFab: FloatingActionButton
     // 保存用户按返回键的时间
     private var mExitTime: Long = 0
-    private lateinit var mHomePresenter: HomePresenter
+    private var mHomePresenter: HomePresenter? = null
 
 
     override val contentViewLayoutID: Int
@@ -122,7 +122,9 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
         mViewPager.currentItem = 1
         mViewPager.offscreenPageLimit = 6
 
-        mHomePresenter.subscribe()
+        mHomePresenter?.let {
+            mHomePresenter!!.subscribe()
+        }
     }
 
 
@@ -168,8 +170,10 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
     }
 
     override fun onDestroy() {
+        mHomePresenter?.let {
+            mHomePresenter!!.unSubscribe()
+        }
         super.onDestroy()
-        mHomePresenter.unSubscribe()
     }
 
     override fun isSupportSwipeBack(): Boolean {
@@ -212,11 +216,10 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
 
 
     override fun OnBannerClick(position: Int) {
-        val (desc, url) = mHomePresenter.bannerModel[position]
-        //        Intent intent = PictureActivity.newIntent(this,model.url,model.desc);
-        //        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
-        //                this,mBanner,PictureActivity.TRANSIT_PIC);
-        //        ActivityCompat.startActivity(this,intent,optionsCompat.toBundle());
-        PictureActivity.start(this, url, desc, mBanner)
+        mHomePresenter?.let {
+            val (desc, url) = mHomePresenter!!.bannerModel[position]
+            PictureActivity.start(this, url, desc, mBanner)
+        }
+
     }
 }
