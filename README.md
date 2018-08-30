@@ -1,21 +1,20 @@
 # AiYaGirl
-「爱吖妹纸」是南尘的「爱吖系列」的较为完善的一款 APP，数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader)
+「爱吖妹纸」是南尘的「爱吖系列」的较为完善的一款 APP，数据来源于代码家的 [干货集中营](http://gank.io/), UI 和部分设计参考自 [云阅](https://github.com/youlookwhat/CloudReader)<br>
+GitHub 上挺多开源的完整 APP，它们各有各的特色，我很感谢你，看到了这儿，这是我的幸运。<br>
 
-GitHub 上挺多开源的完整 APP，它们各有各的特色，我很感谢你，看到了这儿，这是我的幸运。
+这款 APP 更像是一个 sample，内含 Kotlin 版本和 Java 版本写法，我们始终相信拥有完全对比版本的它，会是你学习 kotlin 的良药，同样的，即使你不喜欢 Kotlin，你同样可以直接查看 Java MVP 架构的学习，因为我们的架构思想就是采用地 MVP。<br>
 
-这款 APP 更像是一个 sample，内含 Kotlin 版本和 Java 版本写法，我们始终相信拥有完全对比版本的它，会是你学习 kotlin 的良药，同样的，即使你不喜欢 Kotlin，你同样可以直接查看 Java MVP 架构的学习，因为我们的架构思想就是采用地 MVP。
+最近 Retrofit、RxJava 很火，所以我们的网络请求采用的 Retrofit，并结合 RxJava 进行调用。<br>
 
-最近 Retrofit、RxJava 很火，所以我们的网络请求采用的 Retrofit，并结合 RxJava 进行调用。
+如果你对 RxJava 不是很熟悉，我强烈推荐你看看我的 [RxJava2Examples](https://github.com/nanchen2251/RxJava2Examples) 开源库，除了代码，我们还有完整的一套入门教程，希望不会让你失望~<br>
 
-如果你对 RxJava 不是很熟悉，我强烈推荐你看看我的 [RxJava2Examples](https://github.com/nanchen2251/RxJava2Examples) 开源库，除了代码，我们还有完整的一套入门教程，希望不会让你失望~
+GitHub 和公众号我都会保持维护，期待你与我进行比心的交流。<br>
 
-GitHub 和公众号我都会保持维护，期待你与我进行比心的交流。
+因为我也曾遇到各种棘手的问题，到处询问不到答案。<br>
 
-因为我也曾遇到各种棘手的问题，到处询问不到答案。
+那时候的我，也许正如现在的你。<br>
 
-那时候的我，也许正如现在的你。
-
-而我，也还在这条道路上默默前行~
+而我，也还在这条道路上默默前行~<br>
 
 ## 目前的分支
 - [kotlin-mvp](https://github.com/nanchen2251/AiYaGirl/tree/kotlin)
@@ -46,8 +45,8 @@ GitHub 和公众号我都会保持维护，期待你与我进行比心的交流�
     [简书](http://www.jianshu.com/u/f690947ed5a6)<br>
     [博客园](http://www.cnblogs.com/liushilin/)<br>
     交流群：118116509<br>
-    欢迎投稿(关注)我的唯一公众号，公众号搜索 nanchen 或者扫描下方二维码：<br>
-    ![](https://mmbiz.qpic.cn/mmbiz_jpg/Sib26KFUYxcQib9JiadfxjicYxFvXSKibYhxNg87zXyKzk0wxPdlHbsqSSXK8ZzE5wUX8UkSfVDUMBKzpVkbmlY2u2A/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+    欢迎投稿(关注)我的唯一公众号，公众号搜索 「nanchen」 或者扫描下方二维码：<br>
+    ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/wx.jpg)
 
 ## 特别鸣谢
 [代码家](https://github.com/daimajia) <br>
