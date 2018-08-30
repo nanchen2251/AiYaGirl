@@ -5,9 +5,10 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.nanchen.aiyagirl.App;
 import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.BaseFragment;
-import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
+import com.nanchen.aiyagirl.model.ResultsBean;
 import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryPresenter;
 import com.nanchen.aiyagirl.module.category.CategoryContract.ICategoryView;
 import com.nanchen.aiyagirl.widget.RecyclerViewDivider;
@@ -94,7 +95,7 @@ public class CategoryFragment extends BaseFragment implements ICategoryView, OnR
     @Override
     public void getCategoryItemsFail(String failMessage) {
         if (getUserVisibleHint()) {
-            Toasty.error(this.getContext(), failMessage).show();
+            Toasty.error(App.instance, failMessage).show();
         }
     }
 

@@ -67,20 +67,20 @@ public class CategoryPresenter implements ICategoryPresenter {
 
                     @Override
                     public void onNext(CategoryResult categoryResult) {
-                        if (categoryResult != null && !categoryResult.error) {
-                            if (categoryResult.results == null || categoryResult.results.size() == 0){
+                        if (categoryResult != null && !categoryResult.getError()) {
+                            if (categoryResult.getResults().size() == 0){
                                 // 如果可以，这里可以增加占位图
                                 mCategoryICategoryView.getCategoryItemsFail("获取数据为空！");
                             }else{
                                 if (isRefresh) {
-                                    mCategoryICategoryView.setCategoryItems(categoryResult.results);
+                                    mCategoryICategoryView.setCategoryItems(categoryResult.getResults());
                                     mCategoryICategoryView.hideSwipeLoading();
                                     mCategoryICategoryView.setLoading();
                                 } else {
-                                    mCategoryICategoryView.addCategoryItems(categoryResult.results);
+                                    mCategoryICategoryView.addCategoryItems(categoryResult.getResults());
                                 }
                                 // 如果当前获取的数据数目没有全局设定的每次获取的条数，说明已经没有更多数据
-                                if (categoryResult.results.size() < GlobalConfig.CATEGORY_COUNT){
+                                if (categoryResult.getResults().size() < GlobalConfig.CATEGORY_COUNT){
                                     mCategoryICategoryView.setNoMore();
                                 }
                             }

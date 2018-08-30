@@ -1,8 +1,8 @@
 package com.nanchen.aiyagirl.module.home;
 
 import com.nanchen.aiyagirl.model.CategoryResult;
-import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
 import com.nanchen.aiyagirl.model.PictureModel;
+import com.nanchen.aiyagirl.model.ResultsBean;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter;
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView;
 import com.nanchen.aiyagirl.net.NetWork;
@@ -69,14 +69,14 @@ public class HomePresenter implements IHomePresenter{
 
                     @Override
                     public void onNext(CategoryResult categoryResult) {
-                        if (categoryResult != null && categoryResult.results != null
-                                && categoryResult.results.size() > 0){
+                        if (categoryResult != null && categoryResult.getResults() != null
+                                && categoryResult.getResults().size() > 0){
                             List<String> imgUrls = new ArrayList<>();
-                            for (ResultsBean result : categoryResult.results) {
-                                if (!result.url.isEmpty()){
-                                    imgUrls.add(result.url);
+                            for (ResultsBean result : categoryResult.getResults()) {
+                                if (!result.getUrl().isEmpty()){
+                                    imgUrls.add(result.getUrl());
                                 }
-                                mModels.add(new PictureModel(result.desc,result.url));
+                                mModels.add(new PictureModel(result.getDesc(), result.getUrl()));
                             }
                             mHomeView.setBanner(imgUrls);
 

@@ -2,6 +2,7 @@ package com.nanchen.aiyagirl.module.category;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -11,8 +12,7 @@ import com.nanchen.aiyagirl.R;
 import com.nanchen.aiyagirl.base.adapter.CommonRecyclerAdapter;
 import com.nanchen.aiyagirl.base.adapter.CommonRecyclerHolder;
 import com.nanchen.aiyagirl.base.adapter.ListenerWithPosition;
-import com.nanchen.aiyagirl.model.CategoryResult;
-import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
+import com.nanchen.aiyagirl.model.ResultsBean;
 import com.nanchen.aiyagirl.module.web.WebViewActivity;
 import com.nanchen.aiyagirl.utils.TimeUtil;
 
@@ -22,7 +22,7 @@ import com.nanchen.aiyagirl.utils.TimeUtil;
  * Date: 2017-04-14  10:21
  */
 
-class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.ResultsBean> implements ListenerWithPosition.OnClickWithPositionListener<CommonRecyclerHolder>{
+class CategoryRecyclerAdapter extends CommonRecyclerAdapter<ResultsBean> implements ListenerWithPosition.OnClickWithPositionListener<CommonRecyclerHolder> {
 
     CategoryRecyclerAdapter(Context context) {
         super(context, null, R.layout.item_category);
@@ -35,7 +35,7 @@ class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.Resul
             if (ConfigManage.INSTANCE.isListShowImg()) { // 列表显示图片
                 imageView.setVisibility(View.VISIBLE);
                 String quality = "";
-                if (resultsBean.images != null && resultsBean.images.size() > 0) {
+                if (resultsBean.getImages() != null && resultsBean.getImages().size() > 0) {
                     switch (ConfigManage.INSTANCE.getThumbnailQuality()) {
                         case 0: // 原图
                             quality = "";
@@ -48,7 +48,7 @@ class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.Resul
                             break;
                     }
                     Glide.with(mContext)
-                            .load(resultsBean.images.get(0) + quality)
+                            .load(resultsBean.getImages().get(0) + quality)
                             .placeholder(R.mipmap.image_default)
                             .error(R.mipmap.image_default)
                             .into(imageView);
@@ -59,10 +59,10 @@ class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.Resul
                 imageView.setVisibility(View.GONE);
             }
 
-            holder.setTextViewText(R.id.category_item_desc, resultsBean.desc == null ? "unknown" : resultsBean.desc);
-            holder.setTextViewText(R.id.category_item_author, resultsBean.who == null ? "unknown" : resultsBean.who);
-            holder.setTextViewText(R.id.category_item_time, TimeUtil.dateFormat(resultsBean.publishedAt));
-            holder.setTextViewText(R.id.category_item_src, resultsBean.source == null ? "unknown" : resultsBean.source);
+            holder.setTextViewText(R.id.category_item_desc, TextUtils.isEmpty(resultsBean.getDesc()) ? "unknown" : resultsBean.getDesc());
+            holder.setTextViewText(R.id.category_item_author, TextUtils.isEmpty(resultsBean.getWho()) ? "unknown" : resultsBean.getWho());
+            holder.setTextViewText(R.id.category_item_time, TimeUtil.dateFormat(resultsBean.getPublishedAt()));
+            holder.setTextViewText(R.id.category_item_src, TextUtils.isEmpty(resultsBean.getSource()) ? "unknown" : resultsBean.getSource());
             holder.setOnClickListener(this, R.id.category_item_layout);
         }
     }
@@ -71,8 +71,8 @@ class CategoryRecyclerAdapter extends CommonRecyclerAdapter<CategoryResult.Resul
     public void onClick(View v, int position, CommonRecyclerHolder holder) {
 //        Toasty.info(mContext,"跳转到相应网页！", Toast.LENGTH_SHORT,true).show();
         Intent intent = new Intent(mContext, WebViewActivity.class);
-        intent.putExtra(WebViewActivity.GANK_TITLE, mData.get(position).desc);
-        intent.putExtra(WebViewActivity.GANK_URL, mData.get(position).url);
+        intent.putExtra(WebViewActivity.GANK_TITLE, mData.get(position).getDesc());
+        intent.putExtra(WebViewActivity.GANK_URL, mData.get(position).getUrl());
         mContext.startActivity(intent);
     }
 }

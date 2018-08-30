@@ -2,7 +2,7 @@ package com.nanchen.aiyagirl.module.category;
 
 import com.nanchen.aiyagirl.base.BasePresenter;
 import com.nanchen.aiyagirl.base.BaseView;
-import com.nanchen.aiyagirl.model.CategoryResult.ResultsBean;
+import com.nanchen.aiyagirl.model.ResultsBean;
 
 import java.util.List;
 
