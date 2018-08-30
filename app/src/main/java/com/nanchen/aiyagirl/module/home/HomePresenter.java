@@ -76,10 +76,7 @@ public class HomePresenter implements IHomePresenter{
                                 if (!result.url.isEmpty()){
                                     imgUrls.add(result.url);
                                 }
-                                PictureModel model = new PictureModel();
-                                model.desc = result.desc;
-                                model.url = result.url;
-                                mModels.add(model);
+                                mModels.add(new PictureModel(result.desc,result.url));
                             }
                             mHomeView.setBanner(imgUrls);
 

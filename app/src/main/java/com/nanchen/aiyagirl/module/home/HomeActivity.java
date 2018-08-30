@@ -258,6 +258,6 @@ public class HomeActivity extends BaseActivity implements IHomeView,OnBannerList
 //        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
 //                this,mBanner,PictureActivity.TRANSIT_PIC);
 //        ActivityCompat.startActivity(this,intent,optionsCompat.toBundle());
-        PictureActivity.start(this,model.url,model.desc,mBanner);
+        PictureActivity.start(this, model.getUrl(), model.getDesc(),mBanner);
     }
 }
