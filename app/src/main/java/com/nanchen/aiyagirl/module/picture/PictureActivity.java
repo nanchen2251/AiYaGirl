@@ -17,7 +17,6 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.github.chrisbanes.photoview.PhotoView;
@@ -110,7 +109,7 @@ public class PictureActivity extends BaseActivity implements PictureView{
         Glide.with(Utils.getContext())
                 .load(mImageUrl)
                 .asBitmap()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .dontAnimate()
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
@@ -146,8 +145,8 @@ public class PictureActivity extends BaseActivity implements PictureView{
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         System.gc();
+        super.onDestroy();
     }
 
     @Override
