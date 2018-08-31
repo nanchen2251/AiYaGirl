@@ -31,6 +31,9 @@
     ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/2.jpg) 
 
 ## 更新日志
+V 2.0.1<br>
+ * [优化] 采用 kotlin 全面改写 APP 
+ 
 V 1.0.6<br>
  * [修复] 修复主页在华为手机上虚拟按键也被沉浸式挡住的适配问题。
 
@@ -93,7 +96,7 @@ V 1.0.2<br>
     
 ## Licenses
 ```
- Copyright 2017 nanchen(刘世麟)
+ Copyright 2018 nanchen(刘世麟)
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
