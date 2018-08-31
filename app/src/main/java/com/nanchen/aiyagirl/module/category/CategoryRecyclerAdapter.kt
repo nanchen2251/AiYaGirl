@@ -27,11 +27,11 @@ class CategoryRecyclerAdapter(context: Context)
     override fun convert(holder: CommonRecyclerHolder, resultsBean: ResultsBean?) {
         if (resultsBean != null) {
             val imageView = holder.getView<ImageView>(R.id.category_item_img)
-            if (ConfigManage.INSTANCE.isListShowImg()) { // 列表显示图片
+            if (ConfigManage.isListShowImg()) { // 列表显示图片
                 imageView.visibility = View.VISIBLE
                 var quality = ""
                 if (resultsBean.images != null && resultsBean.images!!.isNotEmpty()) {
-                    when (ConfigManage.INSTANCE.getThumbnailQuality()) {
+                    when (ConfigManage.getThumbnailQuality()) {
                         0 // 原图
                         -> quality = ""
                         1 //

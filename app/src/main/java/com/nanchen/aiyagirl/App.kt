@@ -37,7 +37,7 @@ class App : Application() {
         LeakCanary.install(this)
 
         BGASwipeBackManager.getInstance().init(this)
-        ConfigManage.INSTANCE.initConfig(this)
+        ConfigManage.initConfig(this)
         Utils.init(this)
     }
 

@@ -8,17 +8,16 @@ import android.content.Context
  * Date: 2017-04-14  10:41
  */
 
-enum class ConfigManage {
-    INSTANCE;
+object ConfigManage {
 
-    private val spName = "app_config"
-    private val key_isListShowImg = "isListShowImg"
-    private val key_thumbnailQuality = "thumbnailQuality"
+    private const val spName = "app_config"
+    private const val key_isListShowImg = "isListShowImg"
+    private const val key_thumbnailQuality = "thumbnailQuality"
 
     private var isListShowImg: Boolean = false
     private var thumbnailQuality: Int = 0
 
-    fun initConfig(context: Context) {
+    @JvmStatic fun initConfig(context: Context) {
         val sharedPreferences = context.getSharedPreferences(spName, Context.MODE_PRIVATE)
         // 列表是否显示图片
         isListShowImg = sharedPreferences.getBoolean(key_isListShowImg, true)
@@ -26,11 +25,11 @@ enum class ConfigManage {
         thumbnailQuality = sharedPreferences.getInt(key_thumbnailQuality, 1)
     }
 
-    fun isListShowImg(): Boolean {
+    @JvmStatic fun isListShowImg(): Boolean {
         return isListShowImg
     }
 
-    fun setListShowImg(listShowImg: Boolean) {
+    @JvmStatic fun setListShowImg(listShowImg: Boolean) {
         val sharedPreferences = App.instance.getSharedPreferences(spName, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putBoolean(key_isListShowImg, listShowImg)
@@ -39,11 +38,11 @@ enum class ConfigManage {
         }
     }
 
-    fun getThumbnailQuality(): Int {
+    @JvmStatic fun getThumbnailQuality(): Int {
         return thumbnailQuality
     }
 
-    fun setThumbnailQuality(thumbnailQuality: Int) {
+    @JvmStatic fun setThumbnailQuality(thumbnailQuality: Int) {
         val sharedPreferences = App.instance.getSharedPreferences(spName, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putInt(key_thumbnailQuality, thumbnailQuality)
