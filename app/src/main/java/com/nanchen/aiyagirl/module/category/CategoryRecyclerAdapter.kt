@@ -2,10 +2,8 @@ package com.nanchen.aiyagirl.module.category
 
 import android.content.Context
 import android.content.Intent
-import android.text.TextUtils
 import android.view.View
 import android.widget.ImageView
-
 import com.bumptech.glide.Glide
 import com.nanchen.aiyagirl.ConfigManage
 import com.nanchen.aiyagirl.R
@@ -52,10 +50,15 @@ class CategoryRecyclerAdapter(context: Context)
                 imageView.visibility = View.GONE
             }
 
-            holder.setTextViewText(R.id.category_item_desc, if (TextUtils.isEmpty(resultsBean.desc)) "unknown" else resultsBean.desc)
-            holder.setTextViewText(R.id.category_item_author, if (TextUtils.isEmpty(resultsBean.who)) "unknown" else resultsBean.who)
+//            holder.setTextViewText(R.id.category_item_desc, if (TextUtils.isEmpty(resultsBean.desc)) "unknown" else resultsBean.desc)
+//            holder.setTextViewText(R.id.category_item_author, if (TextUtils.isEmpty(resultsBean.who)) "unknown" else resultsBean.who)
+//            holder.setTextViewText(R.id.category_item_src, if (TextUtils.isEmpty(resultsBean.source)) "unknown" else resultsBean.source)
+
+            // 上面的代码可以改写为这样：
+            holder.setTextViewText(R.id.category_item_desc, resultsBean.desc ?: "unknown")
+            holder.setTextViewText(R.id.category_item_author, resultsBean.who ?: "unknown")
+            holder.setTextViewText(R.id.category_item_src, resultsBean.source ?: "unknown")
             holder.setTextViewText(R.id.category_item_time, TimeUtil.dateFormat(resultsBean.publishedAt))
-            holder.setTextViewText(R.id.category_item_src, if (TextUtils.isEmpty(resultsBean.source)) "unknown" else resultsBean.source)
             holder.setOnClickListener(this, R.id.category_item_layout)
         }
     }
