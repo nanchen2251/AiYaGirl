@@ -30,7 +30,7 @@ class CategoryRecyclerAdapter(context: Context)
             if (ConfigManage.isListShowImg()) { // 列表显示图片
                 imageView.visibility = View.VISIBLE
                 var quality = ""
-                if (resultsBean.images != null && resultsBean.images!!.isNotEmpty()) {
+                if (resultsBean.images != null && resultsBean.images.isNotEmpty()) {
                     when (ConfigManage.getThumbnailQuality()) {
                         0 // 原图
                         -> quality = ""
@@ -39,7 +39,7 @@ class CategoryRecyclerAdapter(context: Context)
                         2 -> quality = "?imageView2/0/w/190"
                     }
                     Glide.with(mContext)
-                            .load(resultsBean.images!![0] + quality)
+                            .load(resultsBean.images[0] + quality)
                             .placeholder(R.mipmap.image_default)
                             .error(R.mipmap.image_default)
                             .into(imageView)
@@ -55,9 +55,9 @@ class CategoryRecyclerAdapter(context: Context)
 //            holder.setTextViewText(R.id.category_item_src, if (TextUtils.isEmpty(resultsBean.source)) "unknown" else resultsBean.source)
 
             // 上面的代码可以改写为这样：
-            holder.setTextViewText(R.id.category_item_desc, resultsBean.desc ?: "unknown")
-            holder.setTextViewText(R.id.category_item_author, resultsBean.who ?: "unknown")
-            holder.setTextViewText(R.id.category_item_src, resultsBean.source ?: "unknown")
+            holder.setTextViewText(R.id.category_item_desc, if (resultsBean.desc.isEmpty()) "unknown" else resultsBean.desc)
+            holder.setTextViewText(R.id.category_item_author, if (resultsBean.who.isNotEmpty()) resultsBean.who else "unknown")
+            holder.setTextViewText(R.id.category_item_src, if (resultsBean.source.isNotEmpty()) resultsBean.source else "unknown")
             holder.setTextViewText(R.id.category_item_time, TimeUtil.dateFormat(resultsBean.publishedAt))
             holder.setOnClickListener(this, R.id.category_item_layout)
         }

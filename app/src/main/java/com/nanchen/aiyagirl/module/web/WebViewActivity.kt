@@ -26,7 +26,9 @@ class WebViewActivity : BaseActivity(), IWebView {
     lateinit var mWebAppbar: AppBarLayout
     lateinit var mWebView: WebView
 
-    private lateinit var mWebPresenter: IWebPresenter
+    private val mWebPresenter: IWebPresenter by lazy {
+        WebPresenter(this)
+    }
 
     override val contentViewLayoutID: Int
         get() = R.layout.activity_web_view
@@ -52,8 +54,6 @@ class WebViewActivity : BaseActivity(), IWebView {
         mWebProgressBar = web_progressBar
         mWebAppbar = web_appbar
         mWebView = web_view
-
-        mWebPresenter = WebPresenter(this)
 
         mWebToolbar.setNavigationOnClickListener { finish() }
 

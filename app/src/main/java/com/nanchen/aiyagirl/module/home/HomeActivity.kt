@@ -58,7 +58,9 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
     lateinit var mFab: FloatingActionButton
     // 保存用户按返回键的时间
     private var mExitTime: Long = 0
-    private var mHomePresenter: HomePresenter? = null
+    private val mHomePresenter: HomePresenter by lazy {
+        HomePresenter(this)
+    }
 
 
     override val contentViewLayoutID: Int
@@ -74,8 +76,6 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
         mDrawerLayout = mainActivity
         mBanner = main_banner
         mFab = main_fab
-
-        mHomePresenter = HomePresenter(this)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 4.4 以上版本
             // 设置 Toolbar 高度为 80dp，适配状态栏
@@ -122,9 +122,7 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
         mViewPager.currentItem = 1
         mViewPager.offscreenPageLimit = 6
 
-        mHomePresenter?.let {
-            mHomePresenter!!.subscribe()
-        }
+        mHomePresenter.subscribe()
     }
 
 
@@ -170,9 +168,7 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
     }
 
     override fun onDestroy() {
-        mHomePresenter?.let {
-            mHomePresenter!!.unSubscribe()
-        }
+        mHomePresenter.unSubscribe()
         super.onDestroy()
     }
 
@@ -216,10 +212,8 @@ class HomeActivity : BaseActivity(), IHomeView, OnBannerListener {
 
 
     override fun OnBannerClick(position: Int) {
-        mHomePresenter?.let {
-            val (desc, url) = mHomePresenter!!.bannerModel[position]
-            PictureActivity.start(this, url, desc, mBanner)
-        }
+        val (desc, url) = mHomePresenter.bannerModel[position]
+        PictureActivity.start(this, url, desc, mBanner)
 
     }
 }

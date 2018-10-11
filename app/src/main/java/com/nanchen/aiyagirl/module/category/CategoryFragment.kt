@@ -28,9 +28,15 @@ class CategoryFragment : BaseFragment(), ICategoryView, OnRefreshListener, OnLoa
     private lateinit var mRecyclerView: RecyclerViewWithFooter
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
-    override lateinit var categoryName: String
-    private lateinit var mAdapter: CategoryRecyclerAdapter
-    private lateinit var mICategoryPresenter: ICategoryPresenter
+    override val categoryName: String by lazy {
+        arguments?.getString(CATEGORY_NAME) ?: ""
+    }
+    private val mAdapter: CategoryRecyclerAdapter by lazy {
+        CategoryRecyclerAdapter(context!!)
+    }
+    private val mICategoryPresenter: ICategoryPresenter by lazy {
+        CategoryPresenter(this)
+    }
 
 
     override val contentViewLayoutID: Int
@@ -40,13 +46,7 @@ class CategoryFragment : BaseFragment(), ICategoryView, OnRefreshListener, OnLoa
         mRecyclerView = view.recyclerView
         mSwipeRefreshLayout = view.swipe_refresh_layout
 
-        mICategoryPresenter = CategoryPresenter(this)
-
-        categoryName = arguments!!.getString(CATEGORY_NAME)
-
         mSwipeRefreshLayout.setOnRefreshListener(this)
-
-        mAdapter = CategoryRecyclerAdapter(activity!!)
 
         mRecyclerView.layoutManager = LinearLayoutManager(activity)
         mRecyclerView.addItemDecoration(RecyclerViewDivider(activity!!, LinearLayoutManager.HORIZONTAL))

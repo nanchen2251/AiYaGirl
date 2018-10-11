@@ -65,7 +65,7 @@ class HomePresenter internal constructor(private val mHomeView: IHomeView) : IHo
                                 if (!result.url.isEmpty()) {
                                     imgUrls.add(result.url)
                                 }
-                                mModels.add(PictureModel(result.desc ?: "unknown", result.url))
+                                mModels.add(PictureModel(if (result.desc.isEmpty()) "unknown" else result.desc, result.url))
                             }
                             mHomeView.setBanner(imgUrls)
                         } else {

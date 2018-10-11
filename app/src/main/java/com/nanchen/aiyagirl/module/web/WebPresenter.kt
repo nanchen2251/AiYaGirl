@@ -12,18 +12,18 @@ import com.nanchen.aiyagirl.module.web.WebContract.IWebView
 
 class WebPresenter(private val mWebView: IWebView) : IWebPresenter {
     override lateinit var gankUrl: String
-    private var mActivity: Activity? = null
+    private val mActivity: Activity by lazy {
+        mWebView.webViewContext
+    }
 
 
     override fun subscribe() {
-        mActivity = mWebView.webViewContext
-        val intent = mActivity!!.intent
+        val intent = mActivity.intent
         mWebView.setGankTitle(intent.getStringExtra(WebViewActivity.GANK_TITLE))
         mWebView.initWebView()
         gankUrl = intent.getStringExtra(WebViewActivity.GANK_URL)
         mWebView.loadGankUrl(gankUrl)
     }
-
 
     override fun unSubscribe() {
 

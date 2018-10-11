@@ -45,7 +45,9 @@ class PictureActivity : BaseActivity(), PictureView {
     lateinit var mProgressBar: ProgressBar
     lateinit var mSaveBtn: ImageButton
 
-    private lateinit var mPresenter: Presenter
+    private val mPresenter: Presenter by lazy {
+        PicturePresenter(this)
+    }
 
     override val contentViewLayoutID: Int
         get() = R.layout.activity_picture
@@ -62,7 +64,6 @@ class PictureActivity : BaseActivity(), PictureView {
         mSaveBtn = picture_btn_save
 
         showProgress()
-        mPresenter = PicturePresenter(this)
         parseIntent()
         ViewCompat.setTransitionName(mImgView, TRANSIT_PIC)
 
