@@ -45,7 +45,7 @@ GitHub 和公众号我都会保持维护，期待你与我进行比心的交流�
     [博客园](http://www.cnblogs.com/liushilin/)<br>
     交流群：118116509<br>
     欢迎投稿(关注)我的唯一公众号，公众号搜索 「nanchen」 或者扫描下方二维码：<br>
-    ![](https://github.com/nanchen2251/AiYaGirl/blob/master/screenshot/wx_8.jpg)
+    ![]https://github.com/nanchen2251/Blogs/blob/master/images/nanchen12.jpg)
 
 ## 特别鸣谢
 [代码家](https://github.com/daimajia) <br>
