@@ -13,7 +13,7 @@ import java.util.*
  * Date: 2017-04-07  16:29
  */
 
-class CommonViewPagerAdapter(fm: FragmentManager, private val title: Array<String>) : FragmentPagerAdapter(fm) {
+class CommonViewPagerAdapter(fm: FragmentManager, titles: Array<String>) : MyFragmentPagerAdapter(fm, titles) {
     private val mFragments = ArrayList<Fragment>()
 
     fun addFragment(fragment: Fragment) {
