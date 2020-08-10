@@ -8,12 +8,12 @@
     android:background="@color/black"
     tools:context="com.nanchen.aiyagirl.module.picture.PictureActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/picture_app_bar">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/picture_toolbar"
@@ -21,7 +21,7 @@
             app:navigationIcon="@mipmap/icon_back"
             app:title="关于爱吖妹纸"/>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar
         android:layout_width="wrap_content"

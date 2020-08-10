@@ -1,13 +1,11 @@
 package com.nanchen.aiyagirl.base
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import butterknife.ButterKnife
-import butterknife.Unbinder
 
 /**
  * Author: nanchen
@@ -17,7 +15,7 @@ import butterknife.Unbinder
 
 abstract class BaseFragment : Fragment() {
 
-    private lateinit var unbinder: Unbinder
+//    private lateinit var unbinder: Unbinder
 
     /**
      * 获取布局ID
@@ -39,12 +37,12 @@ abstract class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        unbinder = ButterKnife.bind(this, view)
+//        unbinder = ButterKnife.bind(this, view)
         init(view)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        unbinder.unbind()
+//        unbinder.unbind()
     }
 }

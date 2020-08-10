@@ -10,6 +10,7 @@ import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.adapter.CommonRecyclerAdapter
 import com.nanchen.aiyagirl.base.adapter.CommonRecyclerHolder
 import com.nanchen.aiyagirl.base.adapter.ListenerWithPosition
+import com.nanchen.aiyagirl.model.Data
 import com.nanchen.aiyagirl.model.ResultsBean
 import com.nanchen.aiyagirl.module.web.WebViewActivity
 import com.nanchen.aiyagirl.utils.TimeUtil
@@ -21,10 +22,10 @@ import com.nanchen.aiyagirl.utils.TimeUtil
  */
 
 class CategoryRecyclerAdapter(context: Context)
-    : CommonRecyclerAdapter<ResultsBean>(context, null, R.layout.item_category),
+    : CommonRecyclerAdapter<Data>(context, null, R.layout.item_category),
         ListenerWithPosition.OnClickWithPositionListener<CommonRecyclerHolder> {
 
-    override fun convert(holder: CommonRecyclerHolder, resultsBean: ResultsBean?) {
+    override fun convert(holder: CommonRecyclerHolder, resultsBean: Data?) {
         if (resultsBean != null) {
             val imageView = holder.getView<ImageView>(R.id.category_item_img)
             if (ConfigManage.isListShowImg()) { // 列表显示图片
@@ -56,8 +57,8 @@ class CategoryRecyclerAdapter(context: Context)
 
             // 上面的代码可以改写为这样：
             holder.setTextViewText(R.id.category_item_desc, if (resultsBean.desc.isEmpty()) "unknown" else resultsBean.desc)
-            holder.setTextViewText(R.id.category_item_author, if (resultsBean.who.isNotEmpty()) resultsBean.who else "unknown")
-            holder.setTextViewText(R.id.category_item_src, if (resultsBean.source.isNotEmpty()) resultsBean.source else "unknown")
+            holder.setTextViewText(R.id.category_item_author, if (resultsBean.title.isNotEmpty()) resultsBean.title else "unknown")
+            holder.setTextViewText(R.id.category_item_src, if (resultsBean.desc.isNotEmpty()) resultsBean.desc else "unknown")
             holder.setTextViewText(R.id.category_item_time, TimeUtil.dateFormat(resultsBean.publishedAt))
             holder.setOnClickListener(this, R.id.category_item_layout)
         }

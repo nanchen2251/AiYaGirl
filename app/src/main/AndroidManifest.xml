@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.nanchen.aiyagirl">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nanchen.aiyagirl">
 
     <!-- 网络访问权限申明 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- if you want to load images from a file OR from the internet -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 保存图片需要使用 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
 
         <!-- 闪屏页 -->
         <activity
@@ -26,52 +29,41 @@
             android:screenOrientation="portrait"
             android:theme="@style/ViewBigPicTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <!-- 主页面 -->
         <activity
             android:name=".module.home.HomeActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-        </activity>
+            android:launchMode="singleTop"></activity>
 
         <!-- Web页 -->
         <activity
             android:name=".module.web.WebViewActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-        </activity>
+            android:launchMode="singleTop"></activity>
 
         <!-- 项目主页 -->
         <activity
             android:name=".module.navhome.NavHomeActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-        </activity>
+            android:launchMode="singleTop"></activity>
 
         <!-- 问题反馈 -->
         <activity
             android:name=".module.navdeedback.NavDeedBackActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-        </activity>
+            android:launchMode="singleTop"></activity>
 
         <!-- 关于我们 -->
         <activity
             android:name=".module.navabout.NavAboutActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-        </activity>
+            android:launchMode="singleTop"></activity>
 
         <!--大图页面-->
-        <activity android:name=".module.picture.PictureActivity"
-                  android:launchMode="singleTop"
-                  android:screenOrientation="portrait">
-        </activity>
+        <activity
+            android:name=".module.picture.PictureActivity"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

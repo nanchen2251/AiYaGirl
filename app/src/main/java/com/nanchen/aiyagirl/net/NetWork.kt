@@ -24,7 +24,7 @@ object NetWork {
         if (gankApi == null) {
             val retrofit = Retrofit.Builder()
                     .client(okHttpClient)
-                    .baseUrl("http://gank.io/api/")
+                    .baseUrl("https://gank.io/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build()

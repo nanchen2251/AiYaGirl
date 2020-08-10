@@ -15,9 +15,9 @@
  */
 package com.nanchen.aiyagirl.utils
 
-import android.support.v4.view.ViewCompat
-import android.support.v4.view.ViewPropertyAnimatorListener
-import android.support.v4.view.animation.LinearOutSlowInInterpolator
+import androidx.core.view.ViewCompat
+import androidx.core.view.ViewPropertyAnimatorListener
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import android.view.View
 
 object AnimatorUtil {

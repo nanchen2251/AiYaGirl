@@ -3,7 +3,6 @@ package com.nanchen.aiyagirl.base
 import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
-import butterknife.ButterKnife
 import com.nanchen.aiyagirl.R
 
 /**
@@ -24,6 +23,6 @@ abstract class BaseDialog
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(layoutId, null)
         this.setContentView(view)
-        ButterKnife.bind(this)
+//        ButterKnife.bind(this)
     }
 }

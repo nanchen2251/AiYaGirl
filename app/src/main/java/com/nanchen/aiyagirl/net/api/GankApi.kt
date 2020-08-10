@@ -1,6 +1,8 @@
 package com.nanchen.aiyagirl.net.api
 
+import com.nanchen.aiyagirl.model.BannerResult
 import com.nanchen.aiyagirl.model.CategoryResult
+import com.nanchen.aiyagirl.model.PageBean
 
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -23,6 +25,9 @@ interface GankApi {
      * @param count     条目数目
      * @param page      页数
      */
-    @GET("data/{category}/{count}/{page}")
-    fun getCategoryData(@Path("category") category: String, @Path("count") count: Int, @Path("page") page: Int): Observable<CategoryResult>
+    @GET("v2/data/category/All/type/{type}/page/{page}/count/{count}")
+    fun getCategoryData(@Path("type") type: String, @Path("count") count: Int, @Path("page") page: Int): Observable<PageBean>
+
+    @GET("v2/banners")
+    fun getBanners(): Observable<BannerResult>
 }

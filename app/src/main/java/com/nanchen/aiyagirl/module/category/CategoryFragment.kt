@@ -1,13 +1,13 @@
 package com.nanchen.aiyagirl.module.category
 
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.nanchen.aiyagirl.App
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseFragment
+import com.nanchen.aiyagirl.model.Data
 import com.nanchen.aiyagirl.model.ResultsBean
 import com.nanchen.aiyagirl.widget.RecyclerViewDivider
 import com.nanchen.aiyagirl.widget.RecyclerViewWithFooter.OnLoadMoreListener
@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.fragment_category.view.*
  * Date: 2017-04-14  9:46
  */
 
-class CategoryFragment : BaseFragment(), ICategoryView, OnRefreshListener, OnLoadMoreListener {
+class CategoryFragment : BaseFragment(), ICategoryView, SwipeRefreshLayout.OnRefreshListener, OnLoadMoreListener {
     private lateinit var mRecyclerView: RecyclerViewWithFooter
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
@@ -77,11 +77,11 @@ class CategoryFragment : BaseFragment(), ICategoryView, OnRefreshListener, OnLoa
         }
     }
 
-    override fun setCategoryItems(data: List<ResultsBean>) {
+    override fun setCategoryItems(data: List<Data>) {
         mAdapter.setData(data)
     }
 
-    override fun addCategoryItems(data: List<ResultsBean>) {
+    override fun addCategoryItems(data: List<Data>) {
         mAdapter.addData(data)
 
     }

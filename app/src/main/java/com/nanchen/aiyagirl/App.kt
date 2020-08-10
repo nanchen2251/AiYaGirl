@@ -3,7 +3,6 @@ package com.nanchen.aiyagirl
 import android.app.Application
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackManager
 import com.nanchen.aiyagirl.utils.Utils
-import com.squareup.leakcanary.LeakCanary
 
 /**
  * 应用程序
@@ -28,13 +27,13 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // 初始化 LeakCanary
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return
-        }
-        LeakCanary.install(this)
+//        // 初始化 LeakCanary
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return
+//        }
+//        LeakCanary.install(this)
 
         BGASwipeBackManager.getInstance().init(this)
         ConfigManage.initConfig(this)

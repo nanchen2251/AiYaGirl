@@ -2,6 +2,7 @@ package com.nanchen.aiyagirl.module.category
 
 import com.nanchen.aiyagirl.base.BasePresenter
 import com.nanchen.aiyagirl.base.BaseView
+import com.nanchen.aiyagirl.model.Data
 import com.nanchen.aiyagirl.model.ResultsBean
 
 /**
@@ -17,9 +18,9 @@ interface ICategoryView : BaseView {
 
     fun getCategoryItemsFail(failMessage: String)
 
-    fun setCategoryItems(data: List<ResultsBean>)
+    fun setCategoryItems(data: List<Data>)
 
-    fun addCategoryItems(data: List<ResultsBean>)
+    fun addCategoryItems(data: List<Data>)
 
     fun showSwipeLoading()
 

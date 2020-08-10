@@ -10,13 +10,13 @@
     tools:context="com.nanchen.aiyagirl.module.web.WebViewActivity">
 
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
         android:id="@+id/web_appbar">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/web_toolbar"
             android:layout_width="match_parent"
             app:navigationIcon="@mipmap/icon_back"
@@ -33,7 +33,7 @@
                 android:maxLines="1"
                 android:textSize="18sp"/>
 
-        </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
         <ProgressBar
             android:id="@+id/web_progressBar"
@@ -45,7 +45,7 @@
             android:progressDrawable="@drawable/progressbar"
             android:visibility="visible" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <WebView
         android:id="@+id/web_view"

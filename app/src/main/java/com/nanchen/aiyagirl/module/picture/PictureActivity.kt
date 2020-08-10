@@ -5,18 +5,17 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.ActivityOptionsCompat
-import android.support.v4.view.ViewCompat
-import android.support.v7.widget.Toolbar
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.view.ViewCompat
+import androidx.appcompat.widget.Toolbar
 import android.text.TextUtils
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ProgressBar
-import butterknife.OnClick
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
 import com.github.chrisbanes.photoview.PhotoView
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseActivity
@@ -71,45 +70,36 @@ class PictureActivity : BaseActivity(), PictureView {
         mToolbar.setNavigationOnClickListener { finish() }
         setSupportActionBar(mToolbar)
         supportActionBar?.hide()
-
-        val target = object : SimpleTarget<Bitmap>() {
-            override fun onResourceReady(resource: Bitmap?, glideAnimation: GlideAnimation<in Bitmap>?) {
-                hideProgress()
-                mBitmap = resource
-                if (resource != null){
-                    mSaveBtn.visibility = View.VISIBLE
-                    mImgView.setImageBitmap(resource)
-                }else{
-                    mSaveBtn.visibility = View.GONE
+        picture_btn_save.setOnClickListener {
+            mPresenter.saveGirl(mImageUrl, mBitmap!!, mImageTitle)
+        }
+        picture_img.setOnClickListener {
+            if (supportActionBar != null) {
+                if (supportActionBar!!.isShowing) {
+                    supportActionBar!!.hide()
+                } else {
+                    supportActionBar!!.show()
                 }
             }
         }
 
-        Glide.with(Utils.getContext())
+        val target = object : SimpleTarget<Bitmap>() {
+
+            override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                hideProgress()
+                mBitmap = resource
+                mSaveBtn.visibility = View.VISIBLE
+                mImgView.setImageBitmap(resource)
+            }
+        }
+
+        Glide.with(Utils.getContext()).asBitmap()
                 .load(mImageUrl)
-                .asBitmap()
                 .dontAnimate()
                 .into(target)
 
     }
 
-
-    @OnClick(R.id.picture_btn_save)
-    fun onClick() {
-        mPresenter.saveGirl(mImageUrl, mBitmap!!, mImageTitle)
-    }
-
-
-    @OnClick(R.id.picture_img)
-    fun onPictureClick() {
-        if (supportActionBar != null) {
-            if (supportActionBar!!.isShowing) {
-                supportActionBar!!.hide()
-            } else {
-                supportActionBar!!.show()
-            }
-        }
-    }
 
     override fun onDestroy() {
         System.gc()

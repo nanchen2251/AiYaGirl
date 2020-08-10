@@ -1,9 +1,8 @@
 package com.nanchen.aiyagirl.module.navhome
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.v7.widget.Toolbar
-import butterknife.OnClick
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.widget.Toolbar
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseActivity
 import com.nanchen.aiyagirl.utils.ShareUtil
@@ -36,10 +35,10 @@ class NavHomeActivity : BaseActivity() {
         setSupportActionBar(mToolbar)
         //不添加这句华为手机会出现标题显示不完整的问题
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        nav_home_fab.setOnClickListener {
+            ShareUtil.share(this, R.string.string_share_text)
+        }
     }
 
-    @OnClick(R.id.nav_home_fab)
-    fun onClick() {
-        ShareUtil.share(this, R.string.string_share_text)
-    }
+
 }

@@ -2,6 +2,7 @@ package com.nanchen.aiyagirl.module.category
 
 import com.nanchen.aiyagirl.config.GlobalConfig
 import com.nanchen.aiyagirl.model.CategoryResult
+import com.nanchen.aiyagirl.model.PageBean
 import com.nanchen.aiyagirl.net.NetWork
 import rx.Observer
 import rx.Subscription
@@ -47,7 +48,7 @@ class CategoryPresenter(
                 .getCategoryData(mCategoryICategoryView.categoryName, GlobalConfig.CATEGORY_COUNT, mPage)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : Observer<CategoryResult> {
+                .subscribe(object : Observer<PageBean> {
                     override fun onCompleted() {
 
                     }
@@ -57,21 +58,21 @@ class CategoryPresenter(
                         mCategoryICategoryView.getCategoryItemsFail(mCategoryICategoryView.categoryName + " 列表数据获取失败！")
                     }
 
-                    override fun onNext(categoryResult: CategoryResult?) {
-                        if (categoryResult != null && !categoryResult.error) {
-                            if (categoryResult.results.isEmpty()) {
+                    override fun onNext(categoryResult: PageBean?) {
+                        if (categoryResult != null ) {
+                            if (categoryResult.data.isEmpty()) {
                                 // 如果可以，这里可以增加占位图
                                 mCategoryICategoryView.getCategoryItemsFail("获取数据为空！")
                             } else {
                                 if (isRefresh) {
-                                    mCategoryICategoryView.setCategoryItems(categoryResult.results)
+                                    mCategoryICategoryView.setCategoryItems(categoryResult.data)
                                     mCategoryICategoryView.hideSwipeLoading()
                                     mCategoryICategoryView.setLoading()
                                 } else {
-                                    mCategoryICategoryView.addCategoryItems(categoryResult.results)
+                                    mCategoryICategoryView.addCategoryItems(categoryResult.data)
                                 }
                                 // 如果当前获取的数据数目没有全局设定的每次获取的条数，说明已经没有更多数据
-                                if (categoryResult.results.size < GlobalConfig.CATEGORY_COUNT) {
+                                if (categoryResult.data.size < GlobalConfig.CATEGORY_COUNT) {
                                     mCategoryICategoryView.setNoMore()
                                 }
                             }

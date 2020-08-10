@@ -1,12 +1,11 @@
 package com.nanchen.aiyagirl.base
 
 import android.os.Bundle
-import android.support.annotation.ColorInt
-import android.support.annotation.IntRange
-import android.support.annotation.LayoutRes
-import android.support.v7.app.AppCompatActivity
+import androidx.annotation.ColorInt
+import androidx.annotation.IntRange
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
-import butterknife.ButterKnife
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.utils.StatusBarUtil
@@ -53,10 +52,10 @@ abstract class BaseActivity : AppCompatActivity(), BGASwipeBackHelper.Delegate {
      */
     protected abstract fun initView(savedInstanceState: Bundle?)
 
-    override fun setContentView(@LayoutRes layoutResID: Int) {
-        super.setContentView(layoutResID)
-        ButterKnife.bind(this)
-    }
+//    override fun setContentView(@LayoutRes layoutResID: Int) {
+//        super.setContentView(layoutResID)
+////        ButterKnife.bind(this)
+//    }
 
     /**
      * 检查是否为空，以免导致空指针

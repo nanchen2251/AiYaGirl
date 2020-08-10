@@ -2,10 +2,9 @@ package com.nanchen.aiyagirl.module.navabout
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.TextView
-import butterknife.OnClick
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseActivity
 import com.nanchen.aiyagirl.module.web.WebViewActivity
@@ -13,7 +12,7 @@ import com.nanchen.aiyagirl.utils.PackageUtil
 import com.nanchen.aiyagirl.utils.Utils
 import kotlinx.android.synthetic.main.activity_nav_about.*
 
-class NavAboutActivity : BaseActivity() {
+class NavAboutActivity : BaseActivity(), View.OnClickListener {
 
     lateinit var mToolbar: Toolbar
     lateinit var mTvVersionName: TextView
@@ -28,12 +27,14 @@ class NavAboutActivity : BaseActivity() {
 
         mToolbar.setNavigationOnClickListener { finish() }
         mTvVersionName.text = "当前版本 V${PackageUtil.versionName}"
+        tv_new_version.setOnClickListener(this)
+        tv_function.setOnClickListener(this)
+        tv_about_star.setOnClickListener(this)
+        tv_gankio.setOnClickListener(this)
     }
 
-
-    @OnClick(R.id.tv_new_version, R.id.tv_function, R.id.tv_about_star, R.id.tv_gankio)
-    fun onClick(view: View) {
-        when (view.id) {
+    override fun onClick(view: View?) {
+        when (view?.id) {
             R.id.tv_new_version -> Utils.openLink(this, resources.getString(R.string.string_url_new_version))
             R.id.tv_function -> {
                 val intentOther = Intent(this, WebViewActivity::class.java)
@@ -55,4 +56,10 @@ class NavAboutActivity : BaseActivity() {
             }
         }
     }
+
+
+//    @OnClick(R.id.tv_new_version, R.id.tv_function, R.id.tv_about_star, R.id.tv_gankio)
+//    fun onClick(view: View) {
+//
+//    }
 }

@@ -1,8 +1,6 @@
 package com.nanchen.aiyagirl.module.home
 
-import com.nanchen.aiyagirl.model.CategoryResult
-import com.nanchen.aiyagirl.model.PictureModel
-import com.nanchen.aiyagirl.model.ResultsBean
+import com.nanchen.aiyagirl.model.*
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomePresenter
 import com.nanchen.aiyagirl.module.home.HomeContract.IHomeView
 import com.nanchen.aiyagirl.net.NetWork
@@ -46,10 +44,10 @@ class HomePresenter internal constructor(private val mHomeView: IHomeView) : IHo
 
     override fun getBannerData() {
         mSubscription = NetWork.getGankApi()
-                .getCategoryData("福利", 5, 1)
+                .getBanners()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : Observer<CategoryResult> {
+                .subscribe(object : Observer<BannerResult> {
                     override fun onCompleted() {
 
                     }
@@ -58,14 +56,14 @@ class HomePresenter internal constructor(private val mHomeView: IHomeView) : IHo
                         mHomeView.showBannerFail("Banner 图加载失败")
                     }
 
-                    override fun onNext(categoryResult: CategoryResult?) {
-                        if (categoryResult != null && !categoryResult.results.isEmpty()) {
+                    override fun onNext(categoryResult: BannerResult?) {
+                        if (categoryResult != null && categoryResult.data.isNotEmpty()) {
                             val imgUrls = ArrayList<String>()
-                            for (result: ResultsBean in categoryResult.results) {
-                                if (!result.url.isEmpty()) {
-                                    imgUrls.add(result.url)
+                            for (result: Banner in categoryResult.data) {
+                                if (result.image.isNotEmpty()) {
+                                    imgUrls.add(result.image)
                                 }
-                                mModels.add(PictureModel(if (result.desc.isEmpty()) "unknown" else result.desc, result.url))
+                                mModels.add(PictureModel(if (result.title.isEmpty()) "unknown" else result.title, result.image))
                             }
                             mHomeView.setBanner(imgUrls)
                         } else {

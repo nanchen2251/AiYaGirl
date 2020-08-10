@@ -3,9 +3,8 @@ package com.nanchen.aiyagirl.module.navdeedback
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import android.view.View
-import butterknife.OnClick
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseActivity
 import com.nanchen.aiyagirl.module.web.WebViewActivity
@@ -22,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_nav_deed_back.*
  * Email: liushilin520@foxmail.com
  * Date: 2017-04-20  10:10
  */
-class NavDeedBackActivity : BaseActivity() {
+class NavDeedBackActivity : BaseActivity(), View.OnClickListener {
 
     lateinit var mToolbar: Toolbar
 
@@ -33,13 +32,41 @@ class NavDeedBackActivity : BaseActivity() {
         mToolbar = nav_deed_back_toolbar
         
         mToolbar.setNavigationOnClickListener { finish() }
+        tv_issues.setOnClickListener(this)
+        tv_qq.setOnClickListener(this)
+        tv_email.setOnClickListener(this)
+        tv_blog.setOnClickListener(this)
     }
 
 
-    @OnClick(R.id.tv_issues, R.id.tv_other, R.id.tv_qq, R.id.tv_email, R.id.tv_blog)
-    fun onClick(view: View) {
+//    @OnClick(R.id.tv_issues, R.id.tv_other, R.id.tv_qq, R.id.tv_email, R.id.tv_blog)
+//    fun onClick(view: View) {
+//
+//    }
+
+    companion object {
+        /**
+         * 判断qq是否可用
+         */
+        val isQQClientAvailable: Boolean
+            get() {
+                val packageManager = Utils.getContext().packageManager
+                val packageInfo = packageManager.getInstalledPackages(0)
+                if (packageInfo != null) {
+                    for (i in packageInfo.indices) {
+                        val pn = packageInfo[i].packageName
+                        if (pn == "com.tencent.mobileqq") {
+                            return true
+                        }
+                    }
+                }
+                return false
+            }
+    }
+
+    override fun onClick(view: View?) {
         val intent: Intent
-        when (view.id) {
+        when (view?.id) {
             R.id.tv_issues -> {
                 intent = Intent(this, WebViewActivity::class.java)
                 intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸")
@@ -69,25 +96,5 @@ class NavDeedBackActivity : BaseActivity() {
                 startActivity(intent)
             }
         }
-    }
-
-    companion object {
-        /**
-         * 判断qq是否可用
-         */
-        val isQQClientAvailable: Boolean
-            get() {
-                val packageManager = Utils.getContext().packageManager
-                val packageInfo = packageManager.getInstalledPackages(0)
-                if (packageInfo != null) {
-                    for (i in packageInfo.indices) {
-                        val pn = packageInfo[i].packageName
-                        if (pn == "com.tencent.mobileqq") {
-                            return true
-                        }
-                    }
-                }
-                return false
-            }
     }
 }

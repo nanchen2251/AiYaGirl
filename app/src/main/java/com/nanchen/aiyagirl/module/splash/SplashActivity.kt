@@ -4,13 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import android.widget.TextView
-import butterknife.BindView
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.nanchen.aiyagirl.R
 import com.nanchen.aiyagirl.base.BaseActivity
 import com.nanchen.aiyagirl.config.ConstantsImageUrl
 import com.nanchen.aiyagirl.module.home.HomeActivity
+import com.nanchen.aiyagirl.utils.ImageUrls
 import kotlinx.android.synthetic.main.activity_splash.*
 import java.util.*
 
@@ -25,11 +25,8 @@ import java.util.*
 class SplashActivity : BaseActivity() {
     private var isIn: Boolean = false
 
-    @BindView(R.id.splash_tv_jump)
-    private lateinit var mTvJump: TextView
 
-    override val contentViewLayoutID: Int
-        get() = R.layout.activity_splash
+    override val contentViewLayoutID: Int= R.layout.activity_splash
 
     override fun initView(savedInstanceState: Bundle?) {
 
@@ -37,9 +34,9 @@ class SplashActivity : BaseActivity() {
         val i = Random().nextInt(ConstantsImageUrl.TRANSITION_URLS.size)
         // 先显示默认图
 
-        splash_iv_defult_pic.setImageDrawable(resources.getDrawable(R.drawable.img_transition_default))
+        splash_iv_defult_pic.setImageDrawable(  ContextCompat.getDrawable(this, R.drawable.img_transition_default))
         Glide.with(this)
-                .load(ConstantsImageUrl.TRANSITION_URLS[i])
+                .load(ImageUrls.instance.getRandomImgUrl())
                 .placeholder(R.drawable.img_transition_default)
                 .error(R.drawable.img_transition_default)
                 .into(splash_iv_pic)
